@@ -16,7 +16,7 @@
 
 1、 可以有变量赋值，例如
 
-@[code](./3_command/simple.sh)
+@[code](./4_command/simple.sh)
 
 2、 "词"是以空白字符分隔开的，空白字符包括制表符（tab）和空格，例如：
 
