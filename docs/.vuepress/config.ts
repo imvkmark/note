@@ -22,7 +22,7 @@ module.exports = {
 			"@vuepress/docsearch",
 			{
 				apiKey: "9eca016e40335ee789f9a73253c13be1",
-				indexName: "poppy",
+				indexName: "note",
 				appId: "LD89A1JN8Y",
 				locales: {
 					"/": {
