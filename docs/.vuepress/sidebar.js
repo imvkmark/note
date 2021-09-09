@@ -91,19 +91,19 @@ module.exports = {
 		},
 	],
 
-	"/Nginx/": [
+	"/nginx/": [
 		"/nginx/readme.md",
 		{
 			text: "入门",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
+				"/nginx/guide/readme.md",
 				"/nginx/guide/dir.md",
 				"/nginx/guide/error.md",
 				"/nginx/guide/linux-install.md",
 				"/nginx/guide/mac-compile.md",
 				"/nginx/guide/nginx-configure-descriptions.md",
-				"/nginx/guide/README.md",
 			],
 		},
 		{
@@ -112,7 +112,7 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/nginx/variable/client.md",
-				"/nginx/variable/README.md",
+				"/nginx/variable/readme.md",
 				"/nginx/variable/server.md",
 				"/nginx/variable/url.md",
 			],
