@@ -4,6 +4,7 @@
 		"docs:build": "vuepress build docs"
 	},
 	"dependencies": {
+		"@vuepress/plugin-docsearch": "^2.0.0-alpha.1",
 		"@vuepress/plugin-register-components": "^2.0.0-beta.24",
 		"less": "^4.1.1",
 		"less-loader": "^10.0.1",
