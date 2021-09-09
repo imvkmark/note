@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.25">
+    <title>CentOS 使用 docker 安装 sentry | 笔记@小有记</title><meta name="description" content="">
+    <link rel="preload" href="/assets/js/runtime~app.ce6e78a5.js" as="script"><link rel="preload" href="/assets/css/styles.c2dbe51e.css" as="style"><link rel="preload" href="/assets/js/2968.6fb6be6b.js" as="script"><link rel="preload" href="/assets/js/app.21ffca0f.js" as="script">
+    <link rel="stylesheet" href="/assets/css/styles.c2dbe51e.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><img class="logo" src="/images/logo.png" alt="笔记@小有记"><span class="site-name can-hide">笔记@小有记</span></a></span><div class="navbar-links-wrapper" style=""><!--[--><!--]--><nav class="navbar-links can-hide"><!--[--><div class="navbar-links-item"><a href="/ops/" class="nav-link router-link-active" aria-label="运维"><!--[--><!--]--> 运维 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/os/" class="nav-link" aria-label="系统"><!--[--><!--]--> 系统 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/nginx/" class="nav-link" aria-label="Nginx"><!--[--><!--]--> Nginx <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/mysql/" class="nav-link" aria-label="Mysql"><!--[--><!--]--> Mysql <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/javascript/" class="nav-link" aria-label="前端"><!--[--><!--]--> 前端 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><button class="toggle-dark-button" title="toggle dark mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><div id="docsearch-container"></div></div></header><div class="sidebar-mask"></div><aside class="sidebar"><nav class="navbar-links"><!--[--><div class="navbar-links-item"><a href="/ops/" class="nav-link router-link-active" aria-label="运维"><!--[--><!--]--> 运维 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/os/" class="nav-link" aria-label="系统"><!--[--><!--]--> 系统 <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/nginx/" class="nav-link" aria-label="Nginx"><!--[--><!--]--> Nginx <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/mysql/" class="nav-link" aria-label="Mysql"><!--[--><!--]--> Mysql <!--[--><!--]--></a></div><div class="navbar-links-item"><a href="/javascript/" class="nav-link" aria-label="前端"><!--[--><!--]--> 前端 <!--[--><!--]--></a></div><!--]--></nav><!--[--><!--]--><ul class="sidebar-links"><!--[--><!--[--><p class="sidebar-heading sidebar-item active">运维</p><ul class=""><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html" class="router-link-active router-link-exact-active nav-link router-link-active sidebar-item active" aria-label="CentOS 使用 docker 安装 sentry"><!--[--><!--]--> CentOS 使用 docker 安装 sentry <!--[--><!--]--></a><ul class="sidebar-sub-items"><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#安装环境" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="安装环境"><!--[--><!--]--> 安装环境 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#安装-senty-到-docker" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="安装 senty 到 docker"><!--[--><!--]--> 安装 senty 到 docker <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#配置-nginx-反向代理" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="配置 nginx 反向代理"><!--[--><!--]--> 配置 nginx 反向代理 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#出现问题" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="出现问题"><!--[--><!--]--> 出现问题 <!--[--><!--]--></a><ul class="sidebar-sub-items"><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#_1-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-unix-var-run-docker-sock" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="1. Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock"><!--[--><!--]--> 1. Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#_2-docker-compose-启动报错" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="2. docker-compose 启动报错"><!--[--><!--]--> 2. docker-compose 启动报错 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#_3-配置-sentry-可以发送邮件" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="3. 配置 Sentry 可以发送邮件"><!--[--><!--]--> 3. 配置 Sentry 可以发送邮件 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#_4-这里配置-register-mirror-加速国内访问" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="4. 这里配置 register mirror, 加速国内访问"><!--[--><!--]--> 4. 这里配置 register mirror, 加速国内访问 <!--[--><!--]--></a><!----><!--]--></li><li><!--[--><a aria-current="page" href="/ops/sentry/install-at-centos.html#_5-sentry-对接上之后无法收集日志" class="router-link-active router-link-exact-active nav-link sidebar-item" aria-label="5. Sentry 对接上之后无法收集日志"><!--[--><!--]--> 5. Sentry 对接上之后无法收集日志 <!--[--><!--]--></a><!----><!--]--></li></ul><!--]--></li></ul><!--]--></li></ul><!--]--><!--]--></ul><!--[--><!--]--></aside><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><h1 id="centos-使用-docker-安装-sentry" tabindex="-1"><a class="header-anchor" href="#centos-使用-docker-安装-sentry" aria-hidden="true">#</a> CentOS 使用 docker 安装 sentry</h1><p>Sentry 是一个开源的实时错误追踪系统，可以帮助开发者实时监控并修复异常问题。它主要专注于持续集成、提高效率并且提升用户体验。Sentry 分为服务端和客户端 SDK，前者可以直接使用提供的在线服务，也可以本地自行搭建；后者提供了对多种主流语言和框架的支持，包括 React、Angular、Node、Django、RoR、PHP、Laravel、Android、.NET、JAVA 等。同时它可提供了和其他流行服务集成的方案，例如 GitHub、GitLab、bitbuck、heroku、slack、Trello 等。</p><p>Sentry 本身是基于 Django 开发的，而且也依赖到其他的如 Postgresql、 Redis 等组件，所以一般有两种途径进行安装：通过 Docker 或用 Python 搭建。官网下分别有以下的两个介绍：</p><p>如果你选择了通过 Docker 进行安装，其实还有更加便捷的方式 —— docker-compose 。在 github 上有一个开源项目用于部署 Sentry ，我们可以直接使用该项目进行部署，首先是克隆该项目：</p><p>地址 : <a href="https://github.com/getsentry/onpremise/" target="_blank" rel="noopener noreferrer">https://github.com/getsentry/onpremise/<span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span></a></p><h2 id="安装环境" tabindex="-1"><a class="header-anchor" href="#安装环境" aria-hidden="true">#</a> 安装环境</h2><p><strong>安装 docker</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 安装/更新 Docker</span>
+$ yum remove docker docker-common docker-selinux docker-engine
+
+<span class="token comment"># 安装依赖</span>
+$ yum <span class="token function">install</span> -y yum-utils device-mapper-persistent-data lvm2
+
+<span class="token comment"># 添加 docker yum 源</span>
+$ yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+<span class="token comment"># 官方源比较慢的话可以更换为 Aliyun 的源</span>
+$ yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+
+
+<span class="token comment"># 允许拓展最新的不稳定的repository</span>
+$ yum-config-manager --enable docker-ce-edge
+
+<span class="token comment"># 安装docker</span>
+<span class="token comment"># yum -y install docker-ce</span>
+
+<span class="token comment"># 开机启动 &amp; 启动 Docker</span>
+$ systemctl <span class="token builtin class-name">enable</span> docker
+$ systemctl start docker
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><strong>安装 docker-composer</strong></p><p>这里推荐使用 Python 的 pip3 管理工具来安装 docker-compose, 这里不推荐使用 pip, 因为这是 2.0 的包管理</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 使用普通用户安装</span>
+$ pip3 <span class="token function">install</span> --user -U docker-compose
+
+<span class="token comment"># 查看docker compose版本</span>
+$ docker-compose version
+docker-compose version <span class="token number">1.29</span>.2, build unknown
+docker-py version: <span class="token number">5.0</span>.0
+CPython version: <span class="token number">3.6</span>.8
+OpenSSL version: OpenSSL <span class="token number">1.0</span>.2k-fips  <span class="token number">26</span> Jan <span class="token number">2017</span>
+
+<span class="token comment"># 查看 pip version</span>
+$ pip3 -V
+pip <span class="token number">21.2</span>.4 from /usr/local/lib/python3.6/site-packages/pip <span class="token punctuation">(</span>python <span class="token number">3.6</span><span class="token punctuation">)</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><strong>如果没有 pip, 则按照以下步骤安装 pip</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment">#上一条语句没有显示版本信息则运行下面语句安装 python-pip3</span>
+$ yum -y <span class="token function">install</span> epel-release
+$ yum -y <span class="token function">install</span> python-pip
+<span class="token comment">#查看pip版本</span>
+$ pip -v
+<span class="token comment">#pip进行升级</span>
+$ pip <span class="token function">install</span> --upgrade pip
+<span class="token comment">#进行安装compose 第一条语句报错执行第二条，执行成功则跳过第二条</span>
+$ pip <span class="token function">install</span> docker-compose
+$ pip <span class="token function">install</span> docker-compose --ignore-installed requests
+$ docker-compose -version
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h2 id="安装-senty-到-docker" tabindex="-1"><a class="header-anchor" href="#安装-senty-到-docker" aria-hidden="true">#</a> 安装 senty 到 docker</h2><p><strong>克隆 sentry 并安装</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ <span class="token function">git</span> clone https://github.com/getsentry/onpremise.git
+$ ./install.sh
+Checking minimum requirements<span class="token punctuation">..</span>.
+Removing network onpremise_default
+<span class="token punctuation">..</span>.
+Created internal Sentry project <span class="token punctuation">(</span>slug<span class="token operator">=</span>internal, <span class="token assign-left variable">id</span><span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+
+Would you like to create a user account now? <span class="token punctuation">[</span>Y/n<span class="token punctuation">]</span>: y
+Email: username@domain.com
+Password:
+Repeat <span class="token keyword">for</span> confirmation:
+User created: username@domain.com
+Added to organization: sentry
+Cleaning up<span class="token punctuation">..</span>.
+
+----------------
+You&#39;re all done<span class="token operator">!</span> Run the following <span class="token builtin class-name">command</span> to get Sentry running:
+
+  docker-compose up -d
+
+<span class="token comment"># docker images 检查安装结果</span>
+$ docker images
+REPOSITORY                             TAG                 IMAGE ID            CREATED             SIZE
+symbolicator-cleanup-onpremise-local   latest              aa9f529b9bba        <span class="token number">6</span> minutes ago       168MB
+sentry-cleanup-onpremise-local         latest              c8ce20926772        <span class="token number">15</span> minutes ago      832MB
+snuba-cleanup-onpremise-local          latest              899555aa0198        <span class="token number">15</span> minutes ago      417MB
+sentry-onpremise-local                 latest              7b49912508f3        <span class="token number">15</span> minutes ago      830MB
+getsentry/snuba                        latest              c278520d8aa3        <span class="token number">2</span> hours ago         415MB
+getsentry/sentry                       latest              5351ca5b79c7        <span class="token number">3</span> hours ago         830MB
+getsentry/symbolicator                 latest              857ed4c4c3bb        <span class="token number">15</span> hours ago        167MB
+getsentry/relay                        latest              cf4553a1852c        <span class="token number">15</span> hours ago        186MB
+busybox                                latest              c7c37e472d31        <span class="token number">3</span> days ago          <span class="token number">1</span>.22MB
+postgres                               <span class="token number">9.6</span>                 51e37c2850c7        <span class="token number">3</span> weeks ago         200MB
+tianon/exim4                           latest              f077f7830685        <span class="token number">3</span> weeks ago         176MB
+redis                                  <span class="token number">5.0</span>-alpine          58084f18c7ec        <span class="token number">4</span> weeks ago         <span class="token number">29</span>.7MB
+alpine                                 latest              a24bb4013296        <span class="token number">4</span> weeks ago         <span class="token number">5</span>.57MB
+nginx                                  <span class="token number">1.16</span>                dfcfd8e9a5d3        <span class="token number">2</span> months ago        127MB
+confluentinc/cp-kafka                  <span class="token number">5.5</span>.0               89e8e98718a8        <span class="token number">2</span> months ago        598MB
+confluentinc/cp-zookeeper              <span class="token number">5.5</span>.0               124ff6469e3d        <span class="token number">2</span> months ago        598MB
+yandex/clickhouse-server               <span class="token number">19.17</span>               f0fa9b979b63        <span class="token number">4</span> months ago        435MB
+memcached                              <span class="token number">1.5</span>-alpine          0dbf6b4c454b        <span class="token number">4</span> months ago        <span class="token number">9</span>.19MB
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br></div></div><p><strong>创建项目的 superuser</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ docker-compose run --rm web upgrade
+Starting sentry_onpremise_redis_1        <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+Starting sentry_onpremise_smtp_1         <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+<span class="token punctuation">..</span>.
+Creating missing DSNs
+Correcting Group.num_comments counter
+09:49:46 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> sentry.plugins.github: apps-not-configured
+Email: <span class="token number">1222</span>@qq.com
+Password:
+Repeat <span class="token keyword">for</span> confirmation:
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p><strong>创建账号和密码</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 创建自己的用户, 根据提示输入邮箱和密码</span>
+$ docker-compose run --rm web createuser
+Starting onpremise_smtp_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+Starting onpremise_postgres_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+Starting onpremise_redis_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+Starting onpremise_memcached_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+09:49:39 <span class="token punctuation">[</span>WARNING<span class="token punctuation">]</span> sentry.utils.geo: settings.GEOIP_PATH_MMDB not configured.
+09:49:46 <span class="token punctuation">[</span>INFO<span class="token punctuation">]</span> sentry.plugins.github: apps-not-configured
+Email: <span class="token number">1222</span>@qq.com
+Password:
+Repeat <span class="token keyword">for</span> confirmation:
+Should this user be a superuser? <span class="token punctuation">[</span>y/N<span class="token punctuation">]</span>: y
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><strong>生成 key 并设置</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ docker-compose run --rm web config generate-secret-key
+
+<span class="token comment"># 编辑 .env 文件</span>
+<span class="token comment"># 添加到 .env 的 SENTRY_SECRET_KEY 里面</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>启动 Docker Compose</strong></p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ docker-compose up -d
+sentry_onpremise_smtp_1 is up-to-date
+<span class="token punctuation">..</span>.
+Recreating sentry_onpremise_nginx_1 <span class="token punctuation">..</span>. <span class="token keyword">done</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><p><strong>使用 docker ps 检查</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>$ docker ps
+CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS              PORTS                          NAMES
+7c86739e1904        nginx:1.16                             &quot;nginx -g &#39;daemon of…&quot;   26 minutes ago      Up 26 minutes       0.0.0.0:9080-&gt;80/tcp           sentry_onpremise_nginx_1
+...
+a85aff3465f8        redis:5.0-alpine                       &quot;docker-entrypoint.s…&quot;   47 minutes ago      Up 39 minutes       6379/tcp                       sentry_onpremise_redis_1
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p><strong>这样在内网便可以访问</strong></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code># 由于没有开放 9080 端口到外网, 所以使用 wget 方式访问, 如果已经开放, 则直接访问 ip:9080 即可访问
+$ wget 127.0.0.1:9080
+--2020-07-03 10:30:24--  http://127.0.0.1:9080/
+正在连接 127.0.0.1:9080... 已连接。
+已发出 HTTP 请求，正在等待回应... 302 Found
+位置：/auth/login/ [跟随至新的 URL]
+--2020-07-03 10:30:25--  http://127.0.0.1:9080/auth/login/
+再次使用存在的到 127.0.0.1:9080 的连接。
+已发出 HTTP 请求，正在等待回应... 302 Found
+位置：/auth/login/sentry/ [跟随至新的 URL]
+--2020-07-03 10:30:26--  http://127.0.0.1:9080/auth/login/sentry/
+再次使用存在的到 127.0.0.1:9080 的连接。
+已发出 HTTP 请求，正在等待回应... 200 OK
+长度：9690 (9.5K) [text/html]
+正在保存至: “index.html”
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div><h2 id="配置-nginx-反向代理" tabindex="-1"><a class="header-anchor" href="#配置-nginx-反向代理" aria-hidden="true">#</a> 配置 nginx 反向代理</h2><div class="language-nginx ext-nginx line-numbers-mode"><pre class="language-nginx"><code><span class="token directive"><span class="token keyword">server</span></span><span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server_name</span> sentry.demo.domain.com</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:9080</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span> <span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span>       <span class="token number">80</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server_name</span> sentry.domain.com</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">return</span> <span class="token number">301</span> https://sentry.domain.com<span class="token variable">$request_uri</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+
+<span class="token directive"><span class="token keyword">server</span></span><span class="token punctuation">{</span>
+    <span class="token directive"><span class="token keyword">listen</span> <span class="token number">443</span> ssl</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">server_name</span> sentry.domain.com</span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">location</span> /</span> <span class="token punctuation">{</span>
+        <span class="token directive"><span class="token keyword">proxy_pass</span> http://127.0.0.1:9080</span><span class="token punctuation">;</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">## ssl</span>
+    <span class="token directive"><span class="token keyword">ssl_certificate</span> https/sentry.domain.com.pem</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_certificate_key</span> https/sentry.domain.com.key</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_session_timeout</span> <span class="token number">5m</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_protocols</span> TLSv1 TLSv1.1 TLSv1.2</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_ciphers</span> ECDHE-RSA-AES128-GCM-SHA256:HIGH:!aNULL:!MD5:!RC4:!DHE</span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">ssl_prefer_server_ciphers</span> <span class="token boolean">on</span></span><span class="token punctuation">;</span>
+
+    <span class="token directive"><span class="token keyword">access_log</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+    <span class="token directive"><span class="token keyword">error_log</span> <span class="token boolean">off</span></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br></div></div><p>这里即可通过域名来进行访问</p><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065596-a5bf29a3-db1c-4a9b-8e3b-34a3c704b2ab.jpeg#height=1632&amp;id=ZqxFO&amp;originHeight=1632&amp;originWidth=2648&amp;originalType=binary&amp;ratio=1&amp;size=0&amp;status=done&amp;style=none&amp;width=2648" alt=""></p><h2 id="出现问题" tabindex="-1"><a class="header-anchor" href="#出现问题" aria-hidden="true">#</a> 出现问题</h2><h3 id="_1-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-unix-var-run-docker-sock" tabindex="-1"><a class="header-anchor" href="#_1-got-permission-denied-while-trying-to-connect-to-the-docker-daemon-socket-at-unix-var-run-docker-sock" aria-hidden="true">#</a> 1. Got permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock</h3><p>解决方法 : 将用户加入 docker 组, 可以让其进行访问</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 把用户加入 docker 组</span>
+$ <span class="token function">usermod</span> -aG docker <span class="token environment constant">$USER</span>
+<span class="token comment"># logout : 注销</span>
+$ systemctl restart docker
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="_2-docker-compose-启动报错" tabindex="-1"><a class="header-anchor" href="#_2-docker-compose-启动报错" aria-hidden="true">#</a> 2. docker-compose 启动报错</h3><blockquote><p>ERROR: for sentry_onpremise_nginx_1  Cannot start service nginx: driver failed programming external connectivity on endpoint sentry_onpremise_nginx_1 (9ee80c3b3949749bdb529f949574f6169a4f993c9a0d50aa621228bd57d579fb): Error starting userland proxy: listen tcp 0.0.0.0:9000: bind: address already in use</p></blockquote><blockquote><p>ERROR: Encountered errors while bringing up the project.</p></blockquote><p>解决方法: 这里一般是端口冲突 参考 <a href="https://github.com/getsentry/onpremise/blob/master/.env" target="_blank" rel="noopener noreferrer">.env<span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span></a> 文件配置端口映射</p><div class="language-diff ext-diff line-numbers-mode"><pre class="language-diff"><code>...
+<span class="token deleted-sign deleted"><span class="token prefix deleted">-</span><span class="token line"> SENTRY_BIND=9000
+</span></span><span class="token inserted-sign inserted"><span class="token prefix inserted">+</span><span class="token line"> SENTRY_BIND=9080
+</span></span>...
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br></div></div><h3 id="_3-配置-sentry-可以发送邮件" tabindex="-1"><a class="header-anchor" href="#_3-配置-sentry-可以发送邮件" aria-hidden="true">#</a> 3. 配置 Sentry 可以发送邮件</h3><p>编辑 <code>./sentry/config.yml</code> 文件</p><div class="language-yaml ext-yml line-numbers-mode"><pre class="language-yaml"><code><span class="token key atrule">mail.backend</span><span class="token punctuation">:</span> <span class="token string">&quot;smtp&quot;</span> <span class="token comment"># Use dummy if you want to disable email entirely</span>
+<span class="token key atrule">mail.host</span><span class="token punctuation">:</span> <span class="token string">&quot;smtpdm.aliyun.com&quot;</span>
+<span class="token key atrule">mail.port</span><span class="token punctuation">:</span> <span class="token number">25</span>
+<span class="token key atrule">mail.username</span><span class="token punctuation">:</span> <span class="token string">&quot;automail@demo.domain.com&quot;</span>
+<span class="token key atrule">mail.password</span><span class="token punctuation">:</span> <span class="token string">&quot;********&quot;</span>
+<span class="token key atrule">mail.use-tls</span><span class="token punctuation">:</span> <span class="token boolean important">false</span>
+<span class="token comment"># The email address to send on behalf of</span>
+<span class="token key atrule">mail.from</span><span class="token punctuation">:</span> <span class="token string">&quot;automail@demo.domain.com&quot;</span>
+<span class="token comment"># 备注: host 就是stmp服务地址</span>
+<span class="token comment"># port 端口和 tls对应 port  25 对应 tls false  port 587 对应 tls true</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>然后运行</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ docker-compose build
+$ docker-compose stop
+$ docker-compose start -d
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br></div></div><p>这样看下 管理员中的 邮箱配置</p><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065601-4a582e4d-1100-4cce-975d-e1f166e28d75.jpeg#height=633&amp;id=LbULY&amp;originHeight=1266&amp;originWidth=1942&amp;originalType=binary&amp;ratio=1&amp;size=0&amp;status=done&amp;style=none&amp;width=971" alt=""></p><p>测试下收到邮件就配置成功了</p><p><img src="https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065583-573bf648-6744-4813-b901-9b9e2e769268.jpeg#height=221&amp;id=RLj9R&amp;originHeight=442&amp;originWidth=1598&amp;originalType=binary&amp;ratio=1&amp;size=0&amp;status=done&amp;style=none&amp;width=799" alt=""></p><blockquote><p>ps : 这里用的是网易的客户端</p></blockquote><h3 id="_4-这里配置-register-mirror-加速国内访问" tabindex="-1"><a class="header-anchor" href="#_4-这里配置-register-mirror-加速国内访问" aria-hidden="true">#</a> 4. 这里配置 register mirror, 加速国内访问</h3><p>打开 <a href="https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors" target="_blank" rel="noopener noreferrer">https://cr.console.aliyun.com/cn-hangzhou/instances/mirrors<span><svg class="icon outbound" xmlns="http://www.w3.org/2000/svg" ariahidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><!--[--><span class="sr-only">open in new window</span><!--]--></span></a> , 这里将镜像设置为使用 aliyun 的加速镜像 针对 Docker 客户端版本大于 1.10.0 的用户 ​ 您可以通过修改 daemon 配置文件/etc/docker/daemon.json 来使用加速器</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token function">sudo</span> <span class="token function">mkdir</span> -p /etc/docker
+<span class="token function">sudo</span> <span class="token function">tee</span> /etc/docker/daemon.json <span class="token operator">&lt;&lt;-</span><span class="token string">&#39;EOF&#39;
+{
+  &quot;registry-mirrors&quot;: [&quot;https://******.mirror.aliyuncs.com&quot;]
+}
+EOF</span>
+<span class="token function">sudo</span> systemctl daemon-reload
+<span class="token function">sudo</span> systemctl restart docker
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br></div></div><h3 id="_5-sentry-对接上之后无法收集日志" tabindex="-1"><a class="header-anchor" href="#_5-sentry-对接上之后无法收集日志" aria-hidden="true">#</a> 5. Sentry 对接上之后无法收集日志</h3><p>需要验证</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code><span class="token comment"># 验证服务器是否接收到请求</span>
+$ <span class="token function">tail</span> -20f /var/logs/nginx/access.log
+
+<span class="token comment"># 验证 docker 镜像是否收到日志</span>
+$ docker-compose logs -f -t --tail<span class="token operator">=</span><span class="token number">100</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><p>下面是一次执行服务的日志</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code># 接收
+nginx_1                    | 172.18.0.1 - - [18/Jul/2020:03:10:02 +0000] &quot;POST /api/4/store/ HTTP/1.0&quot; 200 41 &quot;-&quot; &quot;sentry.php.laravel/1.8.0&quot;
+# kafka 进行消费
+ingest-consumer_1          | 03:10:03 [INFO] batching-kafka-consumer: Flushing 2 items (from {(u&#39;ingest-events&#39;, 0): [138L, 139L]}): forced:False size:False time:True
+# snuba 进行处理
+snuba-cleanup_1            | 2020-07-18 03:10:03,574 Dropped 0 partitions on None
+snuba-consumer_1           | 2020-07-18 03:10:04,600 Flushing 2 items (from {Partition(topic=Topic(name=&#39;events&#39;), index=0): Offsets(lo=154, hi=156)}): forced:False size:False time:True
+snuba-outcomes-consumer_1  | 2020-07-18 03:10:04,603 Flushing 2 items (from {Partition(topic=Topic(name=&#39;outcomes&#39;), index=0): Offsets(lo=140, hi=142)}): forced:False size:False time:True
+snuba-outcomes-consumer_1  | 2020-07-18 03:10:04,623 Worker flush took 18ms
+snuba-consumer_1           | 2020-07-18 03:10:04,730 Worker flush took 129ms
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div><p>如果出现异常则可以进行重启</p><div class="language-bash ext-sh line-numbers-mode"><pre class="language-bash"><code>$ docker-compose restart
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><span class="meta-item-info">2021/8/24 下午10:05:20</span></div><div class="meta-item contributors"><span class="meta-item-label">Contributors: </span><span class="meta-item-info"><!--[--><!--[--><span class="contributor" title="email: zhaody901@126.com">duoli</span><!----><!--]--><!--]--></span></div></footer><!----><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script src="/assets/js/runtime~app.ce6e78a5.js" defer></script><script src="/assets/js/2968.6fb6be6b.js" defer></script><script src="/assets/js/app.21ffca0f.js" defer></script>
+  </body>
+</html>
