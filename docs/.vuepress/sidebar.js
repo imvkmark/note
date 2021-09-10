@@ -63,6 +63,7 @@ module.exports = {
 				"/os/centos/system-install.md",
 				"/os/centos/upgrade-curl.md",
 				"/os/centos/upgrade-supervisor.md",
+				"/os/centos/aliyun-mount-disk.md",
 			],
 		},
 		{
