@@ -5,7 +5,7 @@ console.log(__dirname, "dirname");
 module.exports = {
 	lang: "zh-CN",
 	title: "笔记@小有记",
-	base: "note",
+	base: "/note",
 	themeConfig: {
 		logo: "/images/logo.png",
 		sidebar,
