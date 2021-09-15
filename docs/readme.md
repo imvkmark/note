@@ -1,5 +1,9 @@
 # 笔记
 
+## 文档地址
+
+https://wulicode.com/note 
+
 ## 文档清单
 
 -   JavaScript
