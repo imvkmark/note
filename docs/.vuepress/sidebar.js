@@ -1,4 +1,12 @@
 module.exports = {
+	"/develop/": [
+		{
+			text: "Mysql",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/develop/git/reserve-latest-branch.md"],
+		},
+	],
 	"/mysql/": [
 		{
 			text: "Mysql",
@@ -18,6 +26,12 @@ module.exports = {
 	"/javascript/": [
 		"/javascript/readme.md",
 		{
+			text: "Vue 3 + Vite",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/javascript/vue/readme.md"],
+		},
+		{
 			text: "Npm",
 			collapsable: true,
 			sidebarDepth: 2,
@@ -30,16 +44,10 @@ module.exports = {
 			children: ["/javascript/react/faq.md"],
 		},
 		{
-			text: "ApiCloud",
-			collapsable: true,
-			sidebarDepth: 2,
-			children: ["/javascript/api-cloud/faq.md"],
-		},
-		{
 			text: "Vendor",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/javascript/x_vendor/axios-interceptors.md"],
+			children: ["/javascript/x_vendor/axios-interceptors.md", "/javascript/x_vendor/api-cloud.md"],
 		},
 	],
 	"/ops/": [
