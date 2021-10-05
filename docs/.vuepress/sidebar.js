@@ -60,15 +60,16 @@ module.exports = {
 	],
 
 	"/os/": [
+		"/os/readme.md",
 		{
 			text: "CentOS",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/os/centos/install-php-on-centos.md",
+				"/os/centos/system-install.md",
+				"/os/centos/lnmp-at-centos.md",
 				"/os/centos/install-redis5.md",
 				"/os/centos/modify-host.md",
-				"/os/centos/system-install.md",
 				"/os/centos/upgrade-curl.md",
 				"/os/centos/upgrade-supervisor.md",
 				"/os/centos/aliyun-mount-disk.md",
@@ -92,10 +93,12 @@ module.exports = {
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/os/mac/install-brew-slow.md",
-				"/os/mac/install-php-env.md",
 				"/os/mac/readme.md",
-				"/os/mac/upgrade-bash.md",
+				"/os/mac/brew-at-mac.md",
+				"/os/mac/brew-install-slow.md",
+				"/os/mac/lnmp-at-mac.md",
+				"/os/mac/zsh-at-mac.md",
+				"/os/mac/bash-upgrade.md",
 			],
 		},
 	],
