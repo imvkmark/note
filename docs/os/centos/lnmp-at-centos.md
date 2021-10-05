@@ -4,17 +4,18 @@
 
 这里设置的用户是 `liexiang`
 
-在此之前现需要对 [CentOS 进行服务器完善和升级](https://lang-linux.wulicode.com/zh/latest/centos/1-init/system-install.html)
+在此之前现需要对 [CentOS 进行服务器完善和升级](https://www.yuque.com/duoli/os/centos-upgrade-and-permission)
 
-### 设置软件源 
-- mysql
+### 设置软件源
+
+-   mysql
 
 ```
 # 由于mysql 版权方面的限制, centos 7 没有内置mysql 服务器, 必须从mysql 官方进行安装
 $ yum install http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rpm
 ```
 
-- 设置 nginx 源
+-   设置 nginx 源
 
 源地址: [nginx: Linux packages](http://nginx.org/en/linux_packages.html)
 创建 vim `/etc/yum.repos.d/nginx.repo` , 并且填充以下内容来安装 yum repository 库
@@ -51,14 +52,14 @@ $ yum install redis --enablerepo=remi
 
 ## 安装软件以及配置
 
-
 ### 安装并配置 Mysql 数据库
 
 ```sh
 # 安装 mysql server
 $ yum install mysql-server
 ```
-**启动mysql并且获取密码**
+
+**启动 mysql 并且获取密码**
 
 ```
 $ systemctl start mysqld
@@ -71,7 +72,7 @@ $ grep 'temporary password' /var/log/mysqld.log
 
 **初始化 mysql**
 
-```plain
+```
 $ mysql_secure_installation
 Securing the MySQL server deployment.
 Enter password for user root: ******
@@ -85,10 +86,10 @@ The subsequent steps will run with the existing configuration
 of the plugin.
 Using existing password for root.
 
-Estimated strength of the password: 100 
+Estimated strength of the password: 100
 Change the password for root ? ((Press y|Y for Yes, any other key for No) : *
 
-Estimated strength of the password: 100 
+Estimated strength of the password: 100
 Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y
 By default, a MySQL installation has an anonymous user,
 allowing anyone to log into MySQL without having to have
@@ -125,7 +126,7 @@ Reload privilege tables now? (Press y|Y for Yes, any other key for No) : Y
 
 Success.
 
-All done! 
+All done!
 ```
 
 设置密码的方法
@@ -153,14 +154,14 @@ bind-address=0.0.0.0
 ```
 
 **开机自启动**
+
 ```
 $ systemctl enable mysqld
 ```
 
+### 安装并配置 nginx
 
-### 安装并配置nginx
-
-**安装Nginx**
+**安装 Nginx**
 
 ```sh
 # 安装 nginx
@@ -177,16 +178,25 @@ user liexiang;
 http {
     # http level
     client_max_body_size 20m;
-    
+
     server{
         # server level
         client_max_body_size 20m;
     }
-    
+
 }
 ```
 
-**配置nginx虚拟主机**
+这里需要注意 nginx 缓存目录的权限需要和运行用户一致
+
+```bash
+# 目录位置
+/var/cache/nginx
+/var/lib/nginx
+/var/log/nginx
+```
+
+**配置 nginx 虚拟主机**
 
 ```nginx
 server{
@@ -215,18 +225,17 @@ server{
         expires 12h;
     }
 
-    
+
     access_log /webdata/logs/domain.access.log main;
     error_log /webdata/logs/domain.error.log;
 }
-
 ```
 
 ### 安装并配置 php
 
 ```sh
 # 安装 php 基于 remi , 所以需要安装 remi 源
-# 如果需要安装其他版本, 则需要将 repo=remi-php7x 
+# 如果需要安装其他版本, 则需要将 repo=remi-php7x
 $ yum install --enablerepo=remi-php72 php php-pdo php-fpm php-mbstring php-pecl-mcrypt php-gd php-mysqli php-zip php-bcmath php-xml
 ```
 
@@ -257,6 +266,7 @@ $ chown -R liexiang:liexiang /var/lib/php/
 ### 配置系统端口允许访问并加入自启动
 
 配置的端口有 9023/9024/80/3306 等
+
 ```sh
 # 配置 http
 $ firewall-cmd --permanent --zone=public --add-service=http
@@ -271,14 +281,12 @@ $ systemctl start php-fpm mysqld nginx supervisord redis
 $ systemctl enable php-fpm mysqld nginx supervisord redis
 ```
 
-
-
 ## 补充
 
-### 下载安装mysql
+### 下载安装 mysql
 
-获取最新下载地址: 
-http://dev.mysql.com/downloads/mysql/
+获取最新下载地址:
+[http://dev.mysql.com/downloads/mysql/](http://dev.mysql.com/downloads/mysql/)
 
 ```
 # 下载
@@ -290,22 +298,56 @@ yum localinstall mysql-community-client**.rpm
 yum localinstall mysql-community-server**.rpm
 ```
 
+### Centos 进行 Php 升级(使用 remi-php 源)
+
+安装启用 remi 的工具包
+
+```
+# 安装 util 工具
+$ yum install yum-utils
+
+# 启用相应的源
+$ yum-config-manager --enable remi-php74
+```
+
+进行 PHP 升级, 本来以为很多,结果啥都不用, 一句话搞定
+
+```
+$ yum upgrade php
+```
+
+更改目录权限
+
+```
+$ chown -R userxxx.userxxx /var/lib/php/
+
+# 更改文件执行权限(一般升级不用)
+$ vim /etc/php-fpm.d/www.conf
+# user=...
+# group=xxx
+```
 
 ## 补充附录
+
 ### 变更记录
+
 **2019-09-20**
-- pip 更新为 pip3, 不使用 python2
-- 加入 redis
+
+-   pip 更新为 pip3, 不使用 python2
+-   加入 redis
 
 **2019-04-03**
-- redis 使用 remi 安装最新版
-- supervisor 使用 pip 安装最新版, 系统自带的版本较低
-- supervisor 启动加入自己写入配置文件
+
+-   redis 使用 remi 安装最新版
+-   supervisor 使用 pip 安装最新版, 系统自带的版本较低
+-   supervisor 启动加入自己写入配置文件
 
 **2016-10-05**
-- 第一版版本 
+
+-   第一版版本
 
 ### 参考文章
-- [How To Install Nginx on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)(很及时, 解决了无法使用IP连接上服务器的问题)
-- [Nginx安装（官网翻译）](http://www.cnblogs.com/toughlife/p/5487575.html)
-- [nginx FastCGI错误Primary script unknown解决办法](http://www.jb51.net/article/47916.htm)
+
+-   [How To Install Nginx on CentOS 7](https://www.digitalocean.com/community/tutorials/how-to-install-nginx-on-centos-7)(很及时, 解决了无法使用 IP 连接上服务器的问题)
+-   [Nginx 安装（官网翻译）](http://www.cnblogs.com/toughlife/p/5487575.html)
+-   [nginx FastCGI 错误 Primary script unknown 解决办法](http://www.jb51.net/article/47916.htm)

@@ -52,15 +52,15 @@ $ yum update
 $ yum upgrade
 ```
 
-
 ## 关闭 Seliunx
 
-这里遇到一个坑, 如果不关闭 SELinux, 可能会遇到开发的坑. 
+这里遇到一个坑, 如果不关闭 SELinux, 可能会遇到开发的坑.
 检查 SELinux 是否在运行:
 
 ```
 $ getenforce
 ```
+
 下次重启前禁用 SELinux:
 
 ```
@@ -69,7 +69,6 @@ $ setenforce Permissive
 
 重新启动 Nginx，看看问题是否仍然存在。如果您想永久更改 Selinux 设置，可以编辑 `/etc/sysconfig/selinux`
 
-
 ## 其他参考
 
-[# CentOS 7 安装 nginx, php,mysql,redis,supervisor 套件](https://app.yinxiang.com/shard/s2/nl/120678/8e7d8ac2-37c1-4ce4-b17c-05fde158c97b/)
+-   [CentOS 7 安装 nginx, php,mysql,redis,supervisor 套件](https://app.yinxiang.com/shard/s2/nl/120678/8e7d8ac2-37c1-4ce4-b17c-05fde158c97b/)
