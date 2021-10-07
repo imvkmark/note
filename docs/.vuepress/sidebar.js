@@ -81,11 +81,9 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/os/linux/faq.md",
-				"/os/linux/git-ssh-auto-pull.md",
+				"/os/linux/ssh-at-linux.md",
 				"/os/linux/logrotate.md",
 				"/os/linux/ssh-login-slow-at-pledge.md",
-				"/os/linux/ssh-login.md",
-				"/os/linux/ssh-port.md",
 			],
 		},
 		{
