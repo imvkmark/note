@@ -15,7 +15,7 @@ $ yum install zip unzip
 
 ### 升级 curl 为最新版本
 
-查看文章 : [[转+] CentOS 7 更新 curl 为最新版本](https://lang-linux.wulicode.com/zh/latest/centos/1-init/system-upgrade-curl.html)
+查看文章 : [[转+] CentOS 7 更新 curl 为最新版本](https://wulicode.com/note/os/centos/upgrade-curl.html)
 
 ## 源添加和更换
 
