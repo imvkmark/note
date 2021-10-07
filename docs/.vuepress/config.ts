@@ -4,12 +4,14 @@ const navbar = require("./navbar.js");
 console.log(__dirname, "dirname");
 module.exports = {
 	lang: "zh-CN",
-	title: "笔记@小有记",
+	title: "Note @ Wulicode",
 	base: "/note/",
+	home: "https://wulicode.com/",
 	themeConfig: {
 		logo: "/images/logo.png",
 		sidebar,
 		navbar,
+		repo: "https://github.com/imvkmark/note",
 		displayAllHeaders: true,
 		smoothScroll: true,
 	},
@@ -32,5 +34,6 @@ module.exports = {
 				},
 			},
 		],
+		["@vuepress/toc"],
 	],
 };

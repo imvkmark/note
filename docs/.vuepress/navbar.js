@@ -19,4 +19,8 @@ module.exports = [
 		text: "前端",
 		link: "/javascript/",
 	},
+	{
+		text: "Wulicode",
+		link: "https://wulicode.com/",
+	},
 ];
