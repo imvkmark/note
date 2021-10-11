@@ -4,7 +4,11 @@ module.exports = {
 			text: "Mysql",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/develop/git/reserve-latest-branch.md"],
+			children: [
+				"/develop/git/qa-quick.md",
+				"/develop/git/intro-git-flow.md",
+				"/develop/git/success-git-branch-model.md",
+			],
 		},
 	],
 	"/mysql/": [
