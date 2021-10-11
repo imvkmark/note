@@ -1,9 +1,8 @@
 # 配置 HTTPS
 
-首先配置支持 HTTPS 必须让 Nginx 开启 `http_ssl_module` 模块，[点击查看nginx编译安装参数](/guide/nginx-configure-descriptions.html) ，可以使用`nginx -V`查看是否开启`TLS SNI support enabled`。
+首先配置支持 HTTPS 必须让 Nginx 开启 `http_ssl_module` 模块，[点击查看 nginx 编译安装参数](../guide/nginx-configure-descriptions.md) ，可以使用`nginx -V`查看是否开启`TLS SNI support enabled`。
 
 购买/生成 SSL 证书，可以使用免费的证书，比如：[Let's Encrypt，免费好用的 HTTPS 证书](https://imququ.com/post/letsencrypt-certificate.html) 。
-
 
 ```conf
 # 配置 HTTPS
@@ -46,13 +45,13 @@ server {
 
 ## 配置后的访问规则
 
-输入链接 | 最终访问链接
---- | ---
-http://www.xxoo.com | https://www.xxoo.com
-http://www.xxoo.com/404/500 | https://www.xxoo.com/404/500
-http://xxoo.com | https://www.xxoo.com
-https://www.xxoo.com | -（原链接不变）
-https://xxoo.com/500 | https://www.xxoo.com/500
+| 输入链接                    | 最终访问链接                 |
+| --------------------------- | ---------------------------- |
+| http://www.xxoo.com         | https://www.xxoo.com         |
+| http://www.xxoo.com/404/500 | https://www.xxoo.com/404/500 |
+| http://xxoo.com             | https://www.xxoo.com         |
+| https://www.xxoo.com        | -（原链接不变）              |
+| https://xxoo.com/500        | https://www.xxoo.com/500     |
 
 ## 强烈推荐
 
@@ -60,5 +59,6 @@ https://xxoo.com/500 | https://www.xxoo.com/500
 详细的使用文档参考 [acme.sh/wiki/说明](https://github.com/acmesh-official/acme.sh/wiki/%E8%AF%B4%E6%98%8E)
 
 ## 参考链接
-- [Redirect HTTP to HTTPS in Nginx](https://serversforhackers.com/c/redirect-http-to-https-nginx)
-- [How to force or redirect to SSL in nginx?](https://serverfault.com/questions/250476/how-to-force-or-redirect-to-ssl-in-nginx)
+
+-   [Redirect HTTP to HTTPS in Nginx](https://serversforhackers.com/c/redirect-http-to-https-nginx)
+-   [How to force or redirect to SSL in nginx?](https://serverfault.com/questions/250476/how-to-force-or-redirect-to-ssl-in-nginx)

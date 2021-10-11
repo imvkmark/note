@@ -86,8 +86,7 @@ module.exports = {
 			children: [
 				"/os/linux/faq.md",
 				"/os/linux/ssh-at-linux.md",
-				"/os/linux/logrotate.md",
-				"/os/linux/ssh-login-slow-at-pledge.md",
+				"/os/linux/logrotate.md"
 			],
 		},
 		{

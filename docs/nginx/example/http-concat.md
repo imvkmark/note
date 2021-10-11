@@ -16,7 +16,7 @@ tar xzf 1.2.2.tar.gz
 
 ## 2. 安装
 
-使用 [编译安装](/guide/install.html) ，在配置 configure 时添加参数:
+使用 [编译安装](../guide/linux-install.md) ，在配置 configure 时添加参数:
 
 ```shell
 # 配置
@@ -27,12 +27,12 @@ make
 [sudo] make install
 ```
 
-注意: 如果是重新编译安装时不要运行 `make install`，可参数: [重新编译安装](/guide/linux-install.html#重新编译安装)
+注意: 如果是重新编译安装时不要运行 `make install`，可参数: [重新编译安装](../guide/linux-install.md#重新编译安装)
 
 如我的配置:
 
 ```shell
-./configure 
+./configure
     --...
     --add-module=/home/work/src/nginx-http-concat-1.2.2
 ```
@@ -50,7 +50,7 @@ server {
         concat_types text/css;
         concat_max_files 20;
     }
-        
+
     location /static/js/ {
         concat on;
         concat_types application/javascript;
@@ -65,4 +65,4 @@ server {
 
 ## 4. 使用
 
-现在就可以通过url中的`??`来合并了，比如: `/static/css/??a.css,path/b.css` 。
+现在就可以通过 url 中的`??`来合并了，比如: `/static/css/??a.css,path/b.css` 。

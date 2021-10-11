@@ -1,14 +1,14 @@
 # 学习使用 echo 模块
 
-Nginx echo模块是在nginx程序上扩展了 `echo` 输出字符的功能，对于调试很方便，项目地址: <https://github.com/openresty/echo-nginx-module> 。
+Nginx echo 模块是在 nginx 程序上扩展了 `echo` 输出字符的功能，对于调试很方便，项目地址: <https://github.com/openresty/echo-nginx-module> 。
 
 ## 安装
 
-> 目前支持 `nginx-1.11.2`，高版本可能安装失败，我装 `1.11.13` 失败了，更多支持nginx的版本见: [https://github.com/openresty/echo-nginx-module#compatibility](https://github.com/openresty/echo-nginx-module#compatibility)
+> 目前支持 `nginx-1.11.2`，高版本可能安装失败，我装 `1.11.13` 失败了，更多支持 nginx 的版本见: [https://github.com/openresty/echo-nginx-module#compatibility](https://github.com/openresty/echo-nginx-module#compatibility)
 
 去 [release](https://github.com/openresty/echo-nginx-module/releases) 下载最新的安装包，并解压.
 
-在配置 Nginx 时用: `./configure --add-module=/你的解压路径`，并编译安装，如果是重新编译安装可参考: [重新编译安装](/guide/linux-install.html#重新编译安装)
+在配置 Nginx 时用: `./configure --add-module=/你的解压路径`，并编译安装，如果是重新编译安装可参考: [重新编译安装](../guide/linux-install.md#重新编译安装)
 
 ## 使用
 
@@ -16,8 +16,8 @@ Nginx echo模块是在nginx程序上扩展了 `echo` 输出字符的功能，对
 
 ### echo - 输出字符
 
-- 语法: `echo [options] <string>...`
-- 默认值: `no`
+-   语法: `echo [options] <string>...`
+-   默认值: `no`
 
 ```conf
 # 简单的hello，world!
@@ -28,12 +28,12 @@ server {
 }
 ```
 
-默认echo会自动换行，不需要换行可以: `echo -n xxx;`;
+默认 echo 会自动换行，不需要换行可以: `echo -n xxx;`;
 
 ### echo_before_body，echo_after_body - 页面前、后插入内容
 
-- 语法: `echo_before_body [options] [argument]...`
-- 默认值: `no`
+-   语法: `echo_before_body [options] [argument]...`
+-   默认值: `no`
 
 ```conf
 server {
@@ -57,8 +57,8 @@ server {
 
 ### echo_sleep - 请求等待
 
-- 语法: `echo_sleep <seconds>`
-- 默认值: `no`
+-   语法: `echo_sleep <seconds>`
+-   默认值: `no`
 
 ```conf
 server {
@@ -76,8 +76,8 @@ server {
 
 ### echo_location_async，echo_location - 请求指定路径
 
-- 语法: `echo_location_async <location> [<url_args>]`
-- 默认值: `no`
+-   语法: `echo_location_async <location> [<url_args>]`
+-   默认值: `no`
 
 ```conf
 location /main {
@@ -104,7 +104,8 @@ location /sub {
 1. 异步会并行的去请求
 2. 同步等待当前请求结束才会往下执行
 
-下面这个整个时间为2s，因为新路径最大是2s:
+下面这个整个时间为 2s，因为新路径最大是 2s:
+
 ```conf
  location /main {
      echo_location_async /sub1;
@@ -119,7 +120,8 @@ location /sub {
  }
 ```
 
-下面这个整个时间为3s，因为需要等待`/sub1`完成才进入`/sub2`:
+下面这个整个时间为 3s，因为需要等待`/sub1`完成才进入`/sub2`:
+
 ```conf
  location /main {
      echo_location /sub1;
@@ -138,7 +140,7 @@ location /sub {
 
 ### echo_foreach_split - 分隔循环
 
-- 语法: `echo_foreach_split <delimiter> <string>`
+-   语法: `echo_foreach_split <delimiter> <string>`
 
 ```conf
 location /split {
@@ -170,7 +172,7 @@ location = /api/combo {
 }
 ```
 
-访问: `/api/combo?/a.js,/b.js`，需要注意的是文件的路径必须以`/`开始，因为匹配的`location`，当然真的 `nginx-combo` 服务请看: [nginx-http-concat](/example/http-concat.html)
+访问: `/api/combo?/a.js,/b.js`，需要注意的是文件的路径必须以`/`开始，因为匹配的`location`，当然真的 `nginx-combo` 服务请看: [nginx-http-concat](../example/http-concat.md)
 
 ---
 
@@ -178,5 +180,5 @@ location = /api/combo {
 
 ## link
 
-- [官网](https://github.com/openresty/echo-nginx-module)
-- [我写的在线Demo](//echo.xuexb.com)
+-   [官网](https://github.com/openresty/echo-nginx-module)
+-   [我写的在线 Demo](//echo.xuexb.com)

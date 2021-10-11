@@ -3,9 +3,9 @@
 官方的介绍：
 
 > Adds the specified field to a response header provided that the response code equals 200, 201 (1.3.10), 204, 206, 301, 302, 303, 304, 307 (1.1.16, 1.0.13), or 308 (1.13.0). The value can contain variables.
-> 
+>
 > There could be several add_header directives. These directives are inherited from the previous level if and only if there are no add_header directives defined on the current level.
-> 
+>
 > If the always parameter is specified (1.7.5), the header field will be added regardless of the response code.
 
 意思也就是说话在响应状态码**成功**时，`add_header` 指令才生效，并且当前《作用域》下没有 `add_header` 指令时，会向上层继承。
@@ -32,12 +32,12 @@ server {
 
 因为项目中的应用往往配置会有很多，我们可以把具体的功能拆分成独立的配置文件，使用 `include` 引用进来，如：
 
-- `inc/no-cache.conf` - 无缓存
-- `inc/cache-max.conf` - 缓存最大
-- `inc/sts.conf` - STS
-- `inc/xss.conf` - XSS 安全过滤
-- `inc/php.conf` - PHP FastCGI
-- ...
+-   `inc/no-cache.conf` - 无缓存
+-   `inc/cache-max.conf` - 缓存最大
+-   `inc/sts.conf` - STS
+-   `inc/xss.conf` - XSS 安全过滤
+-   `inc/php.conf` - PHP FastCGI
+-   ...
 
 这样就可以按需引用了，如：
 

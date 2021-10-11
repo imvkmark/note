@@ -24,11 +24,11 @@
 
 ### nginx: [emerg] bind() to 0.0.0.0:80 failed (48: Address already in use)
 
-80端口被占用启动失败，修改端口或者杀死占用者再启动即可。
+80 端口被占用启动失败，修改端口或者杀死占用者再启动即可。
 
 ### nginx: [error] open() "nginx.pid" failed (2: No such file or directory)
 
-pid 进程 id 文件不存在，可能文件被删除或者已经停止，在停止 Nginx 时会使用该进程id，如果不存在将失败，可以手动 kill 掉。
+pid 进程 id 文件不存在，可能文件被删除或者已经停止，在停止 Nginx 时会使用该进程 id，如果不存在将失败，可以手动 kill 掉。
 
 ### nginx: [emerg] unknown "realpath_roots_xxx" variable
 
@@ -54,4 +54,4 @@ location / {
 }
 ```
 
-解决办法就是把 `/` 去掉，更多关于 `proxy_pass` 请看：[`proxy_pass` 技巧](/example/proxy_pass.html) 。
+解决办法就是把 `/` 去掉，更多关于 `proxy_pass` 请看：[`proxy_pass` 技巧](../example/proxy_pass.md) 。
