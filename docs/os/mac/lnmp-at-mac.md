@@ -175,9 +175,9 @@ $ sudo brew services start php@7.2
 
 安装之后有两段话需要注意
 
-> php[@7.2 ](/7.2) is keg-only, which means it was not symlinked into /usr/local,
+> php@7.2 is keg-only, which means it was not symlinked into /usr/local,
 > because this is an alternate version of another formula.
-> If you need to have php[@7.2 ](/7.2) first in your PATH run:
+> If you need to have php@7.2 first in your PATH run:
 > echo 'export PATH="/usr/local/opt/php@7.2/bin:$PATH"' >> ~/.zshrc
 echo 'export PATH="/usr/local/opt/php@7.2/sbin:$PATH"' >> ~/.zshrc
 > For compilers to find php[@7.2 ](/7.2) you may need to set:

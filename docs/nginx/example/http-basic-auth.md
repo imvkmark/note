@@ -152,7 +152,7 @@ http {
 
 当您访问状态页面时，系统会提示您登录：
 
-[![auth_required](./media/15846766188690/auth_required.png)](./media/15846766188690/auth_required.png)
+![](./media/2021/1011/233158.png)
 
 如果提供的名称和密码与密码文件不匹配，则会出现 `401 (Authorization Required)` 错误
 
