@@ -1,5 +1,8 @@
 # CentOS 使用 docker 安装 sentry
 
+> 服务器配置不能低于 4U 8G
+
+​
 Sentry 是一个开源的实时错误追踪系统，可以帮助开发者实时监控并修复异常问题。它主要专注于持续集成、提高效率并且提升用户体验。Sentry 分为服务端和客户端 SDK，前者可以直接使用提供的在线服务，也可以本地自行搭建；后者提供了对多种主流语言和框架的支持，包括 React、Angular、Node、Django、RoR、PHP、Laravel、Android、.NET、JAVA 等。同时它可提供了和其他流行服务集成的方案，例如 GitHub、GitLab、bitbuck、heroku、slack、Trello 等。
 
 Sentry 本身是基于 Django 开发的，而且也依赖到其他的如 Postgresql、 Redis 等组件，所以一般有两种途径进行安装：通过 Docker 或用 Python 搭建。官网下分别有以下的两个介绍：
@@ -77,7 +80,7 @@ $ docker-compose -version
 
 **克隆 sentry 并安装**
 
-```bash
+```
 $ git clone https://github.com/getsentry/onpremise.git
 $ ./install.sh
 Checking minimum requirements...
@@ -175,10 +178,10 @@ Recreating sentry_onpremise_nginx_1 ... done
 
 ```
 $ docker ps
-CONTAINER ID        IMAGE                                  COMMAND                  CREATED             STATUS              PORTS                          NAMES
-7c86739e1904        nginx:1.16                             "nginx -g 'daemon of…"   26 minutes ago      Up 26 minutes       0.0.0.0:9080->80/tcp           sentry_onpremise_nginx_1
+CONTAINER ID        IMAGE                  COMMAND                  CREATED             STATUS              PORTS                          NAMES
+7c86739e1904        nginx:1.16             "nginx -g 'daemon of…"   26 minutes ago      Up 26 minutes       0.0.0.0:9080->80/tcp           sentry_onpremise_nginx_1
 ...
-a85aff3465f8        redis:5.0-alpine                       "docker-entrypoint.s…"   47 minutes ago      Up 39 minutes       6379/tcp                       sentry_onpremise_redis_1
+a85aff3465f8        redis:5.0-alpine       "docker-entrypoint.s…"   47 minutes ago      Up 39 minutes       6379/tcp                       sentry_onpremise_redis_1
 ```
 
 **这样在内网便可以访问**
@@ -204,15 +207,6 @@ $ wget 127.0.0.1:9080
 ## 配置 nginx 反向代理
 
 ```nginx
-server{
-    listen 80;
-    server_name sentry.demo.domain.com;
-
-    location / {
-        proxy_pass http://127.0.0.1:9080;
-    }
-}
-
 server {
     listen       80;
     server_name sentry.domain.com;
@@ -222,6 +216,9 @@ server {
 server{
     listen 443 ssl;
     server_name sentry.domain.com;
+
+    # 由于以后会上传 source-map, 需要将sourcemap 上传大小进行放开
+    client_max_body_size 20m;
 
     location / {
         proxy_pass http://127.0.0.1:9080;
@@ -242,7 +239,7 @@ server{
 
 这里即可通过域名来进行访问
 
-![](https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065596-a5bf29a3-db1c-4a9b-8e3b-34a3c704b2ab.jpeg#height=1632&id=ZqxFO&originHeight=1632&originWidth=2648&originalType=binary&ratio=1&size=0&status=done&style=none&width=2648)
+![](./media/2021/1011/163834.png)
 
 ## 出现问题
 
@@ -301,11 +298,11 @@ $ docker-compose start -d
 
 这样看下 管理员中的 邮箱配置
 
-![](https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065601-4a582e4d-1100-4cce-975d-e1f166e28d75.jpeg#height=633&id=LbULY&originHeight=1266&originWidth=1942&originalType=binary&ratio=1&size=0&status=done&style=none&width=971)
+![](./media/2021/1011/163756.png)
 
 测试下收到邮件就配置成功了
 
-![](https://cdn.nlark.com/yuque/0/2021/jpeg/87644/1623658065583-573bf648-6744-4813-b901-9b9e2e769268.jpeg#height=221&id=RLj9R&originHeight=442&originWidth=1598&originalType=binary&ratio=1&size=0&status=done&style=none&width=799)
+![](./media/2021/1011/163806.png)
 
 > ps : 这里用的是网易的客户端
 
