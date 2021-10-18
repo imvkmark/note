@@ -1,15 +1,28 @@
 module.exports = {
 	"/develop/": [
-		"/develop/git/readme.md",
+		"/develop/readme.md",
 		{
-			text: "Mysql",
+			text: "Git",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
+				"/develop/git/readme.md",
 				"/develop/git/qa-quick.md",
 				"/develop/git/intro-git-flow.md",
 				"/develop/git/success-git-branch-model.md",
 			],
+		},
+		{
+			text: "标准化",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/develop/standard/readme.md", "/develop/standard/env.md", "/develop/standard/front-end.md"],
+		},
+		{
+			text: "IDE",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/develop/ide/webstorm-auto-complete.md"],
 		},
 	],
 	"/mysql/": [
