@@ -6,7 +6,6 @@ module.exports = {
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/develop/git/readme.md",
 				"/develop/git/qa-quick.md",
 				"/develop/git/intro-git-flow.md",
 				"/develop/git/success-git-branch-model.md",
@@ -82,7 +81,14 @@ module.exports = {
 			children: ["/ops/sentry/install-at-centos.md"],
 		},
 	],
-
+	"/php/": [
+		{
+			text: "Php",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/php/qa.md"],
+		},
+	],
 	"/os/": [
 		"/os/readme.md",
 		{
@@ -176,7 +182,7 @@ module.exports = {
 			text: "其他",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/other/python/mirror.md"],
+			children: ["/other/python/mirror.md", "/other/qq-auto-login.md"],
 		},
 	],
 };

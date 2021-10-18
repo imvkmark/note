@@ -25,11 +25,11 @@ module.exports = [
 	},
 	{
 		text: "Php",
-		link: "/php/",
+		link: "/php/qa.md",
 	},
 	{
 		text: "其他",
-		link: "/other/",
+		link: "/other/python/mirror.md",
 	},
 
 	{
