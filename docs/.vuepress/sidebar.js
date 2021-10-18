@@ -1,5 +1,6 @@
 module.exports = {
 	"/develop/": [
+		"/develop/git/readme.md",
 		{
 			text: "Mysql",
 			collapsable: true,
@@ -12,18 +13,19 @@ module.exports = {
 		},
 	],
 	"/mysql/": [
+		"/mysql/readme.md",
 		{
-			text: "Mysql",
+			text: "Mysql Cookbook",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/mysql/1_mysql-client.md",
-				"/mysql/2_query.md",
-				"/mysql/3_table.md",
-				"/mysql/4_string.md",
-				"/mysql/5_datetime.md",
-				"/mysql/6_group.md",
-				"/mysql/7_export.md",
+				"/mysql/note/1_mysql-client.md",
+				"/mysql/note/2_query.md",
+				"/mysql/note/3_table.md",
+				"/mysql/note/4_string.md",
+				"/mysql/note/5_datetime.md",
+				"/mysql/note/6_group.md",
+				"/mysql/note/7_export.md",
 			],
 		},
 	],
@@ -83,11 +85,7 @@ module.exports = {
 			text: "Linux",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: [
-				"/os/linux/faq.md",
-				"/os/linux/ssh-at-linux.md",
-				"/os/linux/logrotate.md"
-			],
+			children: ["/os/linux/faq.md", "/os/linux/ssh-at-linux.md", "/os/linux/logrotate.md"],
 		},
 		{
 			text: "Mac",

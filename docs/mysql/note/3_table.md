@@ -21,6 +21,9 @@ Create Table new_table(Primary Key (id), Index (state, city)) Select id, state, 
 # 创建数据表并修改结构
 Create Table new_table(Primary Key (id), Index (state, city)) Select id, state, city From ori_table;
 Alt Table new_table Modify id Int Unsigned Not Null Auto_Increment;
+
+# 修改表的自增数据
+alter table tb_name AUTO_INCREMENT = 100000;
 ```
 
 ### 4.2 使用临时表
@@ -29,6 +32,7 @@ Alt Table new_table Modify id Int Unsigned Not Null Auto_Increment;
 # 创建临时表
 Create Temporary Table tbl_name (...col define ...)
 ```
+
 不同的数据库连接可以创建同名的临时表, 这些表之间不互相影响. 临时表对数据库连接生效
 如果临时表没有删除则在下次使用的时候会报错, 所以使用前最好先对数据表是否存在做相应的判定.
 
@@ -46,10 +50,10 @@ Select Connection_Id();
 
 ```
 # 显示引擎
-# From Information_Schema 
-Select Engine From Information_Schema.tables 
+# From Information_Schema
+Select Engine From Information_Schema.tables
    Where Table_Schema = 'cookbook' And Table_Name ='cookers';
-   
+
 # Status
 Show Table Status Like 'cookers';
 
