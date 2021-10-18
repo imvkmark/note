@@ -2,7 +2,7 @@
 
 首先配置支持 HTTPS 必须让 Nginx 开启 `http_ssl_module` 模块，[点击查看 nginx 编译安装参数](../guide/nginx-configure-descriptions.md) ，可以使用`nginx -V`查看是否开启`TLS SNI support enabled`。
 
-购买/生成 SSL 证书，可以使用免费的证书，比如：[Let's Encrypt，免费好用的 HTTPS 证书](https://imququ.com/post/letsencrypt-certificate.html) 。
+购买/生成 SSL 证书，可以使用免费的证书，在这里申请就很可以 [腾讯云 SSL 证书](https://console.cloud.tencent.com/ssl)
 
 ```conf
 # 配置 HTTPS
@@ -24,7 +24,7 @@ server {
 # 配置 HTTPS
 server {
     # 配置域名
-    server_name www.xxoo.com xxoo.com;
+    server_name www.foo.com foo.com;
 
     # https默认端口
     listen 443 ssl;
@@ -33,9 +33,8 @@ server {
     add_header strict-transport-security 'max-age=31536000; includeSubDomains; preload';
 
     # https配置
-    ssl on;
-    ssl_certificate /xxoo/www.xxoo.com.crt;
-    ssl_certificate_key /xxoo/www.xxoo.com.key;
+    ssl_certificate https/foo.com.crt;
+    ssl_certificate_key https/foo.com.key;
 
     # 其他按正常配置处理即可...
 }
