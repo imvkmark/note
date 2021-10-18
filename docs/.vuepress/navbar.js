@@ -8,6 +8,10 @@ module.exports = [
 		link: "/os/",
 	},
 	{
+		text: "开发",
+		link: "/develop/",
+	},
+	{
 		text: "Nginx",
 		link: "/nginx/",
 	},
@@ -17,8 +21,17 @@ module.exports = [
 	},
 	{
 		text: "前端",
-		link: "/javascript/",
+		link: "/web/",
 	},
+	{
+		text: "Php",
+		link: "/php/",
+	},
+	{
+		text: "其他",
+		link: "/other/",
+	},
+
 	{
 		text: "Wulicode",
 		link: "https://wulicode.com/",
