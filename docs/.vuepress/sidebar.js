@@ -51,10 +51,15 @@ module.exports = {
 			children: ["/javascript/vue/readme.md"],
 		},
 		{
-			text: "Npm",
+			text: "Npm & Yarn",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/javascript/npm/npm-package.md", "/javascript/npm/faq.md"],
+			children: [
+				"/javascript/npm/npm-package.md",
+				"/javascript/npm/faq.md",
+				"/javascript/npm/npm-mirror.md",
+				"/javascript/npm/yarn-mirror.md",
+			],
 		},
 		{
 			text: "React",
