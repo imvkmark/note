@@ -42,36 +42,36 @@ module.exports = {
 			],
 		},
 	],
-	"/javascript/": [
-		"/javascript/readme.md",
+	"/web/": [
+		"/web/readme.md",
 		{
 			text: "Vue 3 + Vite",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/javascript/vue/readme.md"],
+			children: ["/web/vue/readme.md"],
 		},
 		{
 			text: "Npm & Yarn",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/javascript/npm/npm-package.md",
-				"/javascript/npm/faq.md",
-				"/javascript/npm/npm-mirror.md",
-				"/javascript/npm/yarn-mirror.md",
+				"/web/npm/npm-package.md",
+				"/web/npm/faq.md",
+				"/web/npm/npm-mirror.md",
+				"/web/npm/yarn-mirror.md",
 			],
 		},
 		{
 			text: "React",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/javascript/react/faq.md"],
+			children: ["/web/react/faq.md"],
 		},
 		{
 			text: "Vendor",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/javascript/x_vendor/axios-interceptors.md", "/javascript/x_vendor/api-cloud.md"],
+			children: ["/web/x_vendor/axios-interceptors.md", "/web/x_vendor/api-cloud.md"],
 		},
 	],
 	"/ops/": [
