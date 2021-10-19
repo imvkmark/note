@@ -25,7 +25,7 @@ module.exports = [
 	},
 	{
 		text: "Php",
-		link: "/php/qa.md",
+		link: "/php/",
 	},
 	{
 		text: "其他",

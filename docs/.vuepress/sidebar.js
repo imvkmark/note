@@ -67,10 +67,11 @@ module.exports = {
 			children: ["/web/react/faq.md"],
 		},
 		{
-			text: "服务",
+			text: "三方 & 服务",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
+				"/web/vendor/intro-jsdoc.md",
 				"/web/vendor/axios-interceptors.md",
 				"/web/vendor/sentry-install-with-sourcemap.md",
 				"/web/vendor/api-cloud.md",

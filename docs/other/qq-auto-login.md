@@ -24,7 +24,13 @@ https://q.qlogo.cn/headimg_dl?dst_uin={qq}&spec=640
 
 > 通过此入口进行自动登录
 
+> 王者营地
+
 https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=716027609&pt_3rd_aid=1105200115&daid=381&pt_skey_valid=0&style=35&s_url=http%3A%2F%2Fconnect.qq.com&refer_cgi=m_authorize&ucheck=1&fall_to_wv=1&status_os=11&redirect_uri=auth%3A%2F%2Ftauth.qq.com%2F&client_id=1105200115&response_type=token&scope=all&sdkp=i&sdkv=3.5.3_full&status_machine=HUAWEI2300P&switch=1&h5sig=&loginty=1
+
+> 和平营地
+
+https://xui.ptlogin2.qq.com/cgi-bin/xlogin?appid=716027609&pt_3rd_aid=1105412664&daid=381&pt_skey_valid=0&style=35&s_url=http%3A%2F%2Fconnect.qq.com&refer_cgi=m_authorize&ucheck=1&fall_to_wv=1&status_os=11&redirect_uri=auth%3A%2F%2Ftauth.qq.com%2F&client_id=1105412664&response_type=token&scope=all&sdkp=i&sdkv=3.5.3_full&status_machine=HUAWEI2300P&switch=1&h5sig=&loginty=1
 
 **登录成功的代理页面**
 
