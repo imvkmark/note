@@ -44,10 +44,10 @@ module.exports = {
 	"/web/": [
 		"/web/readme.md",
 		{
-			text: "Vue 3 + Vite",
+			text: "核心",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/web/vue/readme.md"],
+			children: ["/web/core/code-review/js-01.md"],
 		},
 		{
 			text: "Npm & Yarn",
@@ -59,6 +59,12 @@ module.exports = {
 				"/web/npm/npm-mirror.md",
 				"/web/npm/yarn-mirror.md",
 			],
+		},
+		{
+			text: "Vue 3 + Vite",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/web/vue/readme.md", "/web/vue/faq.md"],
 		},
 		{
 			text: "React",
