@@ -3,6 +3,7 @@
 ## SentryCli 安装太慢
 
 **方式 1: ~/.npmrc**
+
 找到并编辑 `~/.npmrc`
 
 ```

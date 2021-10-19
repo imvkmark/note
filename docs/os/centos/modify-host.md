@@ -1,6 +1,5 @@
 # [转] 如何在 CentOS 7 上修改主机名
 
-原文地址 : [如何在 CentOS 7 上修改主机名](https://www.jianshu.com/p/39d7000dfa47)
 在 CentOS 中，有三种定义的主机名:静态的（static），瞬态的（transient），和灵活的（pretty）。`静态`主机名也称为内核主机名，是系统在启动时从/etc/hostname 自动初始化的主机名。`瞬态`主机名是在系统运行时临时分配的主机名，例如，通过 DHCP 或 mDNS 服务器分配。静态主机名和瞬态主机名都遵从作为互联网域名同样的字符限制规则。而另一方面，`灵活`主机名则允许使用自由形式（包括特殊/空白字符）的主机名，以展示给终端用户（如 server-a）。
 在 CentOS 7 中，有个叫 hostnamectl 的命令行工具，它允许你查看或修改与主机名相关的配置。
 
@@ -96,7 +95,7 @@ server-a
 [root@localhost ~]# hostnamectl --static set-hostname server-a
 ```
 
-重启 CentOS 7 之后（`reboot -f` ），
+重启 CentOS 7 之后（`reboot -f`），
 
 ```
 [root@localhost ~]# hostnamectl --static
@@ -111,3 +110,7 @@ server-a
 
 其实，你不必重启机器以激活永久主机名修改。上面的命令会立即修改内核主机名。
 注销并重新登入后在命令行提示来观察新的静态主机名
+
+## 参考
+
+-   [如何在 CentOS 7 上修改主机名](https://www.jianshu.com/p/39d7000dfa47)

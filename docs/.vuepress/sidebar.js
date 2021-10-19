@@ -67,10 +67,14 @@ module.exports = {
 			children: ["/web/react/faq.md"],
 		},
 		{
-			text: "Vendor",
+			text: "服务",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/web/x_vendor/axios-interceptors.md", "/web/x_vendor/api-cloud.md"],
+			children: [
+				"/web/vendor/axios-interceptors.md",
+				"/web/vendor/sentry-install-with-sourcemap.md",
+				"/web/vendor/api-cloud.md",
+			],
 		},
 	],
 	"/ops/": [
@@ -82,11 +86,24 @@ module.exports = {
 		},
 	],
 	"/php/": [
+		"/php/readme.md",
 		{
-			text: "Php",
+			text: "核心",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/php/qa.md"],
+			children: ["/php/core/faq.md"],
+		},
+		{
+			text: "Laravel",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["docs/php/laravel/upgrade-5.5-6.0.md", "docs/php/laravel/upgrade-6.0-6.x.md"],
+		},
+		{
+			text: "三方&服务",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/php/vendor/fzaninotto-faker-readme.md"],
 		},
 	],
 	"/os/": [
