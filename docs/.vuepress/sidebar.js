@@ -104,7 +104,7 @@ module.exports = {
 			text: "Laravel",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["docs/php/laravel/upgrade-5.5-6.0.md", "docs/php/laravel/upgrade-6.0-6.x.md"],
+			children: ["/php/laravel/upgrade-5.5-6.0.md", "/php/laravel/upgrade-6.0-6.x.md"],
 		},
 		{
 			text: "三方&服务",
