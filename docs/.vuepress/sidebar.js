@@ -15,7 +15,13 @@ module.exports = {
 			text: "标准化",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/develop/standard/readme.md", "/develop/standard/env.md", "/develop/standard/front-end.md"],
+			children: [
+				"/develop/standard/readme.md",
+				"/develop/standard/env.md",
+				"/develop/standard/client.md",
+				"/develop/standard/web.md",
+				"/develop/standard/ops.md",
+			],
 		},
 		{
 			text: "IDE",
