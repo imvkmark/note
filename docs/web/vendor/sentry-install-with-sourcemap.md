@@ -30,7 +30,7 @@ token=AccountApiToken
 
 Token 的获取地址 `Account > API> Create New Token`
 
-![](./media/2021/1019/133802.png)
+![](https://file.wulicode.com/note/2021/10-22/00-05-09813.png)
 
 如果这里上传 source-map , 则需要 `project:releases`权限
 
@@ -38,7 +38,7 @@ Token 的获取地址 `Account > API> Create New Token`
 
 dsn 是项目上报错误的地址, **该 dsn（数据源）告诉 SDK 将事件发送到哪里。如果未提供此值，SDK 将尝试从 SENTRY_DSN 环境变量中读取它。如果该变量也不存在，则 SDK 将不会发送任何事件。请在 sentry.io 中查看“设置”->“项目”->“客户端密钥（DSN）”**
 
-![](./media/2021/1019/133814.png)
+![](https://file.wulicode.com/note/2021/10-22/00-04-46427.png)
 
 ## 2. 使用 Webpack 组件包配置
 
