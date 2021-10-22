@@ -48,7 +48,7 @@ $ git flow feature finish 2.1
 
 **发布**
 
-开启 Release, 增加 build 文件描述, 修改版本号, 如果是前端项目需要修改 `package.json` 文件中的版本号, 这里的版本号是完整的版本
+开启 Release, 增加 build 文件描述, 修改版本号, 如果是前端项目需要修改 `package.json` 文件中的版本号, 这里的版本号是完整的版本, 发布之后将修改的内容发送给测试, 由测试统一汇总发送通知
 
 ```
 $ git flow release start 2.1.0
@@ -73,7 +73,18 @@ $ git flow hotfix start 2.28.1
 $ git flow hotfix finish 2.28.1
 ```
 
-完成之后推送分支到 master & develop 分支
+完成之后推送分支到 master & develop 分支, 发布之后将修改的内容发送给测试, 由测试统一汇总发送通知
+
+**通知格式**
+
+在项目的开发过程中进行通知. 通知格式如下
+
+```
+项目(环境) - 版本发布/更新
+- 功能 : 增加功能 XX
+- 优化 : 优化功能 XX
+- 修复 : 修复 XX 问题
+```
 
 **线上更新**
 
