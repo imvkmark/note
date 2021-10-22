@@ -12,6 +12,12 @@ module.exports = {
 			],
 		},
 		{
+			text: "Http",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/develop/http/status.md", "/develop/http/same-site.md"],
+		},
+		{
 			text: "标准化(试行)",
 			collapsable: true,
 			sidebarDepth: 2,
