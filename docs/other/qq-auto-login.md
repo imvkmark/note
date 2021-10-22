@@ -8,7 +8,9 @@ https://xui.ptlogin2.qq.com/ : 登录的说明
 
 https://xui.ptlogin2.qq.com/assistant/troubleshooter.html : 这个网址是登录助手的地址
 
-![](./media/2021/1010/161301.png)
+
+![](https://file.wulicode.com/note/2021/10-22/13-44-29907.png)
+
 
 **QQLogo**
 
