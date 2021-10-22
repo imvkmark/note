@@ -1,6 +1,6 @@
 # [转+] npm 更换源使用国内镜像
 
-![](./media/2021/1018/234644.png)
+![](https://file.wulicode.com/note/2021/10-22/09-22-32302.png)
 
 为什么要换源? npm 官方站点 [http://www.npmjs.org/](http://www.npmjs.org/) 并没有被墙,但是下载第三方依赖包的速度让人着急啊!
 就拿阿里云环境来说,有时 npm 一个包也需要耐心等待......等待过去也许是原地踏步,也许就是安装失败.
@@ -40,7 +40,7 @@ registry=https://registry.npm.taobao.org/
 如果你不想使用国内镜像站点,只需要将 写入 ~/.npmrc 的配置内容删除即可.
 下面是我本地下载 ejs 包的截图,可以看到默认源地址指向了 cnpm
 
-![](./media/2021/1018/234656.png)
+![](https://file.wulicode.com/note/2021/10-22/09-23-58447.png)
 
 (4) 使用 `cnpm` 来替代 `npm`
 
