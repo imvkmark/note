@@ -90,6 +90,7 @@ module.exports = {
 				"/web/vendor/api-cloud.md",
 			],
 		},
+		"/web/faq.md",
 	],
 	"/ops/": [
 		{
