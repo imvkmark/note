@@ -18,6 +18,7 @@ module.exports = {
 			children: [
 				"/develop/standard/readme.md",
 				"/develop/standard/env.md",
+				"/develop/standard/develop.md",
 				"/develop/standard/client.md",
 				"/develop/standard/web.md",
 				"/develop/standard/ops.md",
