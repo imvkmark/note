@@ -12,7 +12,7 @@ module.exports = {
 			],
 		},
 		{
-			text: "标准化",
+			text: "标准化(试行)",
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [

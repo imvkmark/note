@@ -1,6 +1,6 @@
 # 客户端
 
-## Header 的约定(试行版)
+## Header 约定
 
 **软件**
 
@@ -72,12 +72,19 @@ Sentry 允许 H5 进行汇报的标识头, 对接 sentry 之后 web 默认收集
 _config/poppy.php_
 
 ```php
-
 return [
     'system' => [
         'cross_headers'     => [
-            'x-app', 'sentry-trace', 'x-os', 'x-ver', 'x-id', 'x-sys-name', 'x-sys-version', 'x-sys-network', 'x-sys-device', 'x-sys-cpu',
-            'x-k1', 'x-k2', 'x-k3', 'x-k4', 'x-k5', 'x-k6', 'x-k7', 'x-k8', 'x-k9', 'x-k10',
+            // sentry
+            'sentry-trace',
+            // app
+            'x-app', 'x-os', 'x-ver', 'x-id', 
+            // system
+            'x-sys-name', 'x-sys-version', 
+            'x-sys-network', 'x-sys-device', 'x-sys-cpu',
+            // append
+            'x-k1', 'x-k2', 'x-k3', 'x-k4', 'x-k5', 
+            'x-k6', 'x-k7', 'x-k8', 'x-k9', 'x-k10',
         ],
     ]
 ]
