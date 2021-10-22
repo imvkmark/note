@@ -17,5 +17,5 @@ User-Agent : SmobaHelper/5.71.101 (iPhone; iOS 14.6; Scale/3.00)
 x-k1 : 屏幕宽度
 x-k2 : 屏幕高度
 .....
-x-k10 : 预留
+x-k3 ... x-k10 : 预留(如果没有值, 则应当为空)
 ```

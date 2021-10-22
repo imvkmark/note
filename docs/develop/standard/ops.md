@@ -257,4 +257,4 @@ Ansible 工具
 -   恢复
 -   MHA (高可用)
 
-![](./media/2021/1020/092010.png)
+![](https://file.wulicode.com/note/2021/10-22/10-13-39017.png)
