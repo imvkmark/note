@@ -39,7 +39,10 @@ postscribe("#J_wxAuth", '<script src="' + script + '"></script>', {
 
 如果有 map 生成, 则许多源码对外来讲便是可视化的. 例如之前的一个代练项目
 
-![](./media/2020/0907/232243.png)
+
+![](https://file.wulicode.com/note/2021/10-22/09-18-50652.png)
+
+
 
 项目代码一览无余, 所以对于项目上线打包的时候必须要关闭源码 map
 
@@ -70,7 +73,9 @@ module.exports = override(
 )
 ```
 
-![](./media/2020/0907/233606.png)
+
+![](https://file.wulicode.com/note/2021/10-22/09-19-19921.png)
+
 
 关掉 map 之后则看起来放心多了
 
