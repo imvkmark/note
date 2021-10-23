@@ -26,6 +26,7 @@ module.exports = {
 				"/develop/standard/env.md",
 				"/develop/standard/develop.md",
 				"/develop/standard/client.md",
+				"/develop/standard/app.md",
 				"/develop/standard/web.md",
 				"/develop/standard/ops.md",
 			],
