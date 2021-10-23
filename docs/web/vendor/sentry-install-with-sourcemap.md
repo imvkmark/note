@@ -1,4 +1,4 @@
-# Sentry 安装到 React/Vue3 项目并支持 source-map / trace
+# 安装 Sentry 进行错误跟踪
 
 > -   性能监控(trace)
 > -   错误定位(source-map)

@@ -10,7 +10,9 @@ Linux 的云服务器数据盘未做分区和格式化，可以根据以下步�
 
 查看数据盘在没有分区和格式化数据盘之前，使用 `df –h` 命令，是无法看到数据盘的，可以使用 `fdisk -l` 命令查看。如下图：
 
-![](./media/2021/0910/105204.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-25-29645.png)
+
 
 友情提示：若您执行 `fdisk -l` 命令，发现没有 `/dev/xvdb` 标明您的云服务无数据盘，那么您无需进行挂载，此时该教程对您不适用
 
@@ -38,7 +40,9 @@ $ fdisk -u /dev/vdb
 输入`p` 查看该数据盘的规划分区情况。
 输入 `w` 开始分区，并在完成分区后退出。
 
-![](./media/2021/0910/105233.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-25-40578.png)
+
 
 查看新的分区运行以下命令。
 
@@ -46,7 +50,8 @@ $ fdisk -u /dev/vdb
 $ fdisk -lu /dev/vdb
 ```
 
-![](./media/2021/0910/105245.png)
+![](https://file.wulicode.com/note/2021/10-23/11-26-01562.png)
+
 
 格式化新分区使用以下对新分区进行格式化，格式化的时间根据硬盘大小有所不同。
 
@@ -54,7 +59,8 @@ $ fdisk -lu /dev/vdb
 $ mkfs -t ext4 /dev/vdb1
 ```
 
-![](./media/2021/0910/105259.png)
+![](https://file.wulicode.com/note/2021/10-23/11-26-10084.png)
+
 
 ### 3. 挂载
 
@@ -75,7 +81,9 @@ $ echo `blkid /dev/vdb1 | awk '{print $2}' | sed 's/\"//g'` /webdata ext4 defaul
 
 然后使用 `cat /etc/fstab` 命令查看，出现以下信息就表示写入成功。
 
-![](./media/2021/0910/105310.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-26-21424.png)
+
 
 挂载新分区使用`mount -a`
 命令挂载新分区，然后用 `df -h` 命令查看，出现以下信息就说明挂载成功，可以开始使用新的分区了。

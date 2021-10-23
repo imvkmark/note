@@ -152,7 +152,8 @@ http {
 
 当您访问状态页面时，系统会提示您登录：
 
-![](./media/2021/1011/233158.png)
+![](https://file.wulicode.com/note/2021/10-23/11-32-25248.png)
+
 
 如果提供的名称和密码与密码文件不匹配，则会出现 `401 (Authorization Required)` 错误
 

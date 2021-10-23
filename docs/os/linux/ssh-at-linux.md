@@ -142,7 +142,9 @@ $ cat coding.pub
 
 在 git 管理端部分部署公钥
 
-![](./media/2021/1007/115313.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-14-35507.png)
+
 
 ### 2). 测试是否可以链接到 git@e.coding.net 服务器
 
@@ -239,13 +241,45 @@ $ ssh -v user@host
 
 参考地址 : [ssh connection takes forever to initiate, stuck at “pledge: network”](https://serverfault.com/questions/792486/ssh-connection-takes-forever-to-initiate-stuck-at-pledge-network)
 
-![](./media/2021/1007/115916.png)
+![](https://file.wulicode.com/note/2021/10-23/11-14-13819.png)
+
 
 我们可以通过如下命令查看恶意 ip 试图登录次数：
 
 ```
 lastb | awk ‘{ print $3}’ | sort | uniq -c | sort -n
 ```
+
+### 3) 修改 ssh 默认登录的端口
+
+用编辑器打开 SSH 配置文件，修改端口：
+
+```
+# vi /etc/ssh/sshd_config
+```
+
+找到行 `#Port 22` （默认端口为 22），修改端口为其他端口, 不要出现端口冲突
+
+```
+Port 5022
+```
+
+重启 SSH 服务：
+
+```
+# systemctl restart sshd
+```
+
+修改防火墙，允许访问 5022 的端口，并且重启防火墙服务：
+
+```
+# 配置 5022
+$ firewall-cmd --permanent --zone=public --add-port=5022/tcp
+# 重启
+$ firewall-cmd --reload
+```
+
+如果是 Aliyun 主机, 则需要在对应的安全组打开端口访问权限, 否则一样无法访问主机
 
 ## 参考
 

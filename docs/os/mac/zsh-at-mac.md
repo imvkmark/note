@@ -39,11 +39,11 @@ wget https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O - 
 
 如下图所示：
 
-![](./media/2021/1006/000126.png)
+![](https://file.wulicode.com/note/2021/10-23/11-15-34512.png)
 
 安装完成之后退出当前会话重新打开一个终端窗口，你就可以见到这个彩色的提示了：
 
-![](./media/2021/1006/000140.png)
+![](https://file.wulicode.com/note/2021/10-23/11-15-49765.png)
 
 ## 配置
 
@@ -56,7 +56,7 @@ PROMPT='%{$fg_bold[red]%}➜ %{$fg_bold[green]%}%p%{$fg[cyan]%}%d %{$fg_bold[blu
 
 与原来不同的是，将 `c`(表示当前目录)改为 `d`(表示绝对路径)，另外在尾部添加一个 `>` 作为隔离符号，效果如下：
 
-![](./media/2021/1006/000149.png)
+![](https://file.wulicode.com/note/2021/10-23/11-16-05183.png)
 
 ### 切換 theme
 
@@ -120,15 +120,15 @@ dieter.zsh-theme              nicoulaj.zsh-theme
 
 `oh my zsh` 提供丰富的插件，存放在 `~/.oh-my-zsh/plugins` 目录下：
 
-![](./media/2021/1006/000202.png)
+![](https://file.wulicode.com/note/2021/10-23/11-16-22860.png)
 
 想了解每个插件的功能以及如何使用，只要打开相关插件的目录下 `zsh` 文件即可，以 `git` 插件为例：
 
-![](./media/2021/1006/000213.png)
+![](https://file.wulicode.com/note/2021/10-23/11-16-39801.png)
 
 显示如下：
 
-![](./media/2021/1006/000226.png)
+![](https://file.wulicode.com/note/2021/10-23/11-16-55122.png)
 
 打开 `git.plugin.zsh` 文件，里面有很多命名别来来简化命令的输入。您可以根据自己的需要来启用哪些插件，只需在 `~/.zshrc` 配置文件追加内容即可：
 
@@ -178,18 +178,19 @@ git clone git://github.com/joelthelion/autojump.git
 
 如下图：
 
-![](./media/2021/1006/000914.png)
+![](https://file.wulicode.com/note/2021/10-23/11-17-15736.png)
 
 2.使用
 
 我之前打开过我的博客 `~/octopress/source` 目录，现在只需敲入 `j o` 就可以快速切换到 `~/ocotpress` 目录。
 
 如下图：
-![](./media/2021/1006/000922.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-17-29474.png)
 
 利用 `j –s` 可以看你的历史路径库。
 
-![](./media/2021/1006/000931.png)
+![](https://file.wulicode.com/note/2021/10-23/11-17-45982.png)
 
 #### 3.osx
 
@@ -209,11 +210,11 @@ git clone git://github.com/joelthelion/autojump.git
 
 2.目录浏览和跳转：输入 `d`，就显示在会话里访问的目录列表，输入列表前的序号，即可以跳转
 
-![](./media/2021/1006/000941.png)
+![](https://file.wulicode.com/note/2021/10-23/11-18-04895.png)
 
 3.输入 `..` 可以返回到上级目录
 
-![](./media/2021/1006/000949.png)
+![](https://file.wulicode.com/note/2021/10-23/11-18-16775.png)
 
 ### 安装 zsh-comopletions
 
@@ -223,7 +224,7 @@ git clone git://github.com/joelthelion/autojump.git
 $ brew install zsh-completions
 ```
 
-![](./media/2021/1006/000957.png)
+![](https://file.wulicode.com/note/2021/10-23/11-18-26872.png)
 
 要启用还需要打开你的 `.zshrc` 加入以下两行来纳入 `zsh-completions` 的补全功能：
 

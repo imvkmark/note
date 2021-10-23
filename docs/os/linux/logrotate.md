@@ -2,13 +2,13 @@
 
 原文地址 : [运维中的日志切割操作梳理](https://www.cnblogs.com/kevingrace/p/6307298.html)
 
-对于Linux系统安全来说，日志文件是极其重要的工具。不知为何，我发现很多运维同学的服务器上都运行着一些诸如每天切分Nginx日志之类的CRON脚本，大家似乎遗忘了Logrotate，争相发明自己的轮子，这真是让人沮丧啊！就好比明明身边躺着现成的性感美女，大家却忙着自娱自乐，罪过！
+对于 Linux 系统安全来说，日志文件是极其重要的工具。不知为何，我发现很多运维同学的服务器上都运行着一些诸如每天切分 Nginx 日志之类的 CRON 脚本，大家似乎遗忘了 Logrotate，争相发明自己的轮子，这真是让人沮丧啊！就好比明明身边躺着现成的性感美女，大家却忙着自娱自乐，罪过！
 
-logrotate程序是一个日志文件管理工具。用于分割日志文件，删除旧的日志文件，并创建新的日志文件，起到“转储”作用。可以节省磁盘空间。下面就对logrotate日志轮转操作做一梳理记录：
+logrotate 程序是一个日志文件管理工具。用于分割日志文件，删除旧的日志文件，并创建新的日志文件，起到“转储”作用。可以节省磁盘空间。下面就对 logrotate 日志轮转操作做一梳理记录：
 
 ### Logrotate 介绍
 
-显而易见，Logrotate是基于CRON来运行的，其脚本是`/etc/cron.daily/logrotate`
+显而易见，Logrotate 是基于 CRON 来运行的，其脚本是`/etc/cron.daily/logrotate`
 
 ```
 #!/bin/sh
@@ -21,7 +21,7 @@ fi
 exit 0
 ```
 
-实际运行时，Logrotate会调用配置文件「/etc/logrotate.conf」：
+实际运行时，Logrotate 会调用配置文件「/etc/logrotate.conf」：
 
 ```
 # see "man logrotate" for details
@@ -51,29 +51,30 @@ include /etc/logrotate.d
 # system-specific logs may be also be configured here.
 ```
 
-这里的设置可以理解为Logrotate的缺省值，当然了，可以我们在「/etc/logrotate.d」目录里放置自己的配置文件，用来覆盖Logrotate的缺省值。
+这里的设置可以理解为 Logrotate 的缺省值，当然了，可以我们在「/etc/logrotate.d」目录里放置自己的配置文件，用来覆盖 Logrotate 的缺省值。
 
 ### 配置文件介绍
 
-Linux系统默认安装logrotate工具，它默认的配置文件在：
+Linux 系统默认安装 logrotate 工具，它默认的配置文件在：
+
 ```
 /etc/logrotate.conf
 /etc/logrotate.d/
 ```
-logrotate.conf 才主要的配置文件，logrotate.d 是一个目录，该目录里的所有文件都会被主动的读入/etc/logrotate.conf中执行。
-另外，如果 /etc/logrotate.d/ 里面的文件中没有设定一些细节，则会以/etc/logrotate.conf这个文件的设定来作为默认值。
 
+logrotate.conf 才主要的配置文件，logrotate.d 是一个目录，该目录里的所有文件都会被主动的读入/etc/logrotate.conf 中执行。
+另外，如果 /etc/logrotate.d/ 里面的文件中没有设定一些细节，则会以/etc/logrotate.conf 这个文件的设定来作为默认值。
 
-如果等不及cron自动执行日志轮转，想手动强制切割日志，需要加-f参数；不过正式执行前最好通过Debug选项来验证一下（-d参数），这对调试也很重要
+如果等不及 cron 自动执行日志轮转，想手动强制切割日志，需要加-f 参数；不过正式执行前最好通过 Debug 选项来验证一下（-d 参数），这对调试也很重要
 
 ```
 # /usr/sbin/logrotate -f /etc/logrotate.d/nginx
 # /usr/sbin/logrotate -d -f /etc/logrotate.d/nginx
 ```
 
-logrotate命令格式：
-logrotate [OPTION...] 
-`-d`, `--debug` ：debug模式，测试配置文件是否有错误。
+logrotate 命令格式：
+logrotate [OPTION...]
+`-d`, `--debug` ：debug 模式，测试配置文件是否有错误。
 `-f`, `--force` ：强制转储文件。
 `-m`, `--mail=command` ：压缩日志后，发送日志到指定邮箱。
 `-s`, `--state=statefile` ：使用指定的状态文件。
@@ -85,24 +86,30 @@ logrotate [OPTION...]
 $ /usr/sbin/logrotate -v /etc/logrotate.conf 
 $ /usr/sbin/logrotate -v /etc/logrotate.d/php
 ```
-根据日志切割设置进行执行，并显示详细信息,但是不进行具体操作，debug模式
+
+根据日志切割设置进行执行，并显示详细信息,但是不进行具体操作，debug 模式
 
 ```
 $ /usr/sbin/logrotate -d /etc/logrotate.conf 
 $ /usr/sbin/logrotate -d /etc/logrotate.d/nginx
 ```
-查看各log文件的具体执行情况
+
+查看各 log 文件的具体执行情况
+
 ```
 $ cat /var/lib/logrotate.status
 ```
-### 切割介绍
-比如以系统日志/var/log/message做切割来简单说明下：
-第一次执行完rotate(轮转)之后，原本的messages会变成messages.1，而且会制造一个空的messages给系统来储存日志；
-第二次执行之后，messages.1会变成messages.2，而messages会变成messages.1，又造成一个空的messages来储存日志！
-如果仅设定保留三个日志（即轮转3次）的话，那么执行第三次时，则 messages.3这个档案就会被删除，并由后面的较新的保存日志所取代！也就是会保存最新的几个日志。
-日志究竟轮换几次，这个是根据配置文件中的dateext 参数来判定的。
 
-看下logrotate.conf配置：
+### 切割介绍
+
+比如以系统日志/var/log/message 做切割来简单说明下：
+第一次执行完 rotate(轮转)之后，原本的 messages 会变成 messages.1，而且会制造一个空的 messages 给系统来储存日志；
+第二次执行之后，messages.1 会变成 messages.2，而 messages 会变成 messages.1，又造成一个空的 messages 来储存日志！
+如果仅设定保留三个日志（即轮转 3 次）的话，那么执行第三次时，则 messages.3 这个档案就会被删除，并由后面的较新的保存日志所取代！也就是会保存最新的几个日志。
+日志究竟轮换几次，这个是根据配置文件中的 dateext 参数来判定的。
+
+看下 logrotate.conf 配置：
+
 ```
 $ cat /etc/logrotate.conf
 
@@ -127,10 +134,11 @@ include /etc/logrotate.d
 # 因为有 minsize 的参数，因此不见得每个月一定会执行一次喔.要看文件大小。
 ```
 
-由这个文件的设定可以知道/etc/logrotate.d其实就是由/etc/logrotate.conf 所规划出来的目录，虽然可以将所有的配置都写入/etc/logrotate.conf ，但是这样一来这个文件就实在是太复杂了，尤其是当使用很多的服务在系统上面时， 每个服务都要去修改/etc/logrotate.conf的设定也似乎不太合理了。 
+由这个文件的设定可以知道/etc/logrotate.d 其实就是由/etc/logrotate.conf 所规划出来的目录，虽然可以将所有的配置都写入/etc/logrotate.conf ，但是这样一来这个文件就实在是太复杂了，尤其是当使用很多的服务在系统上面时， 每个服务都要去修改/etc/logrotate.conf 的设定也似乎不太合理了。 
 所以，如果独立出来一个目录，那么每个要切割日志的服务， 就可以独自成为一个文件，并且放置到 /etc/logrotate.d/ 当中
 
 ### 其他重要参数说明
+
 ```
 compress                           // 通过gzip 压缩转储以后的日志
 nocompress                         // 不做gzip压缩处理
@@ -163,8 +171,8 @@ size = 5 或 size 5 （>= 5 个字节就转储）
 size = 100k 或 size 100k
 size = 100M 或 size 100M
 ```
-小示例：下面一个切割nginx日志的配置
 
+小示例：下面一个切割 nginx 日志的配置
 
 ```
 $ vim /etc/logrotate.d/nginx
@@ -185,6 +193,7 @@ $ vim /etc/logrotate.d/nginx
 ```
 
 ### 参考文章
-- [配置 logrotate 的终极指导](https://linux.cn/article-8227-1.html)
-- [Linux日志文件总管——logrotate](https://linux.cn/article-4126-1.html)
-- [logrotate日志分割工具使用介绍](https://www.centos.bz/2017/09/logrotate-log-cut/)
+
+-   [配置 logrotate 的终极指导](https://linux.cn/article-8227-1.html)
+-   [Linux 日志文件总管——logrotate](https://linux.cn/article-4126-1.html)
+-   [logrotate 日志分割工具使用介绍](https://www.centos.bz/2017/09/logrotate-log-cut/)

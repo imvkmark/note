@@ -137,7 +137,7 @@ module.exports = {
 			children: [
 				"/os/centos/system-install.md",
 				"/os/centos/lnmp-at-centos.md",
-				"/os/centos/install-redis5.md",
+				"/os/centos/install-redis.md",
 				"/os/centos/modify-host.md",
 				"/os/centos/upgrade-curl.md",
 				"/os/centos/upgrade-supervisor.md",
@@ -148,7 +148,11 @@ module.exports = {
 			text: "Linux",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/os/linux/faq.md", "/os/linux/ssh-at-linux.md", "/os/linux/logrotate.md"],
+			children: [
+                "/os/linux/faq.md", 
+                "/os/linux/ssh-at-linux.md", 
+                "/os/linux/logrotate.md"
+            ],
 		},
 		{
 			text: "Mac",

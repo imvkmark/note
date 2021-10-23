@@ -2,7 +2,10 @@
 
 原文地址 : [How to Install and Configure Redis on CentOS 7](https://linuxize.com/post/how-to-install-and-configure-redis-on-centos-7/)
 
-![](./media/15817911042617/15817918597723.jpg)
+
+![](https://file.wulicode.com/note/2021/10-23/11-23-21017.png)
+
+
 
 Redis 是一个开源的内存型数据库。它可以用作数据库，缓存或消息代理，并支持各种数据结构，例如字符串，哈希，列表，集合等。Redis 通过 Redis Sentinel 提供高可用性，包括监视，通知，自动故障转移。它还使用 Redis Cluster 在多个 Redis 节点之间提供自动分区。
 

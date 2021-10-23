@@ -239,7 +239,7 @@ server{
 
 这里即可通过域名来进行访问
 
-![](./media/2021/1011/163834.png)
+![](https://file.wulicode.com/note/2021/10-23/11-27-33337.png)
 
 ## 出现问题
 
@@ -298,11 +298,11 @@ $ docker-compose start -d
 
 这样看下 管理员中的 邮箱配置
 
-![](./media/2021/1011/163756.png)
+![](https://file.wulicode.com/note/2021/10-23/11-27-45956.png)
 
 测试下收到邮件就配置成功了
 
-![](./media/2021/1011/163806.png)
+![](https://file.wulicode.com/note/2021/10-23/11-27-55804.png)
 
 > ps : 这里用的是网易的客户端
 

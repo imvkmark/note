@@ -4,4 +4,5 @@
 
 查看下是否 php 版本支持 ssl, 如果不支持考虑重新安装并打开 ssl
 
-![](./media/2021/0826/141032.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-24-47607.png)

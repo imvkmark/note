@@ -2,11 +2,13 @@
 
 在使用 Webstorm 写 es6、node 的时候，会出现没有语法提示甚至是产生波浪线，例如常用的 `require`, `import`
 
-![](./media/2021/1018/233454.png)
+![](https://file.wulicode.com/note/2021/10-23/11-29-55367.png)
+
 
 不仅是内置函数语法，不仅是 js，在一些第三方 npm 库（比如 element-ui），在 vue/html 等上也被黄色背景色标上“未知标签名”的语法提示
 
-![](./media/2021/1018/233502.png)
+![](https://file.wulicode.com/note/2021/10-23/11-30-11398.png)
+
 
 既影响美观，又不支持代码候选补全，实在对不起 WebStorm 前端开发利器的称号。
 
@@ -30,21 +32,27 @@ $ yarn add @types/node -D
 
 打开 : `Preferences | Languages & Frameworks | JavaScript | Libraries`
 
-![](./media/2021/1018/233519.png)
+![](https://file.wulicode.com/note/2021/10-23/11-30-23182.png)
+
 
 选择下载, 选中 node
 
-![](./media/2021/1018/233529.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-30-34259.png)
+
 
 下载完成后 启用 `@types/node`
 
-![](./media/2021/1018/233538.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-30-46278.png)
+
 
 3. 不要过滤 `node_modules` 文件夹！
 
 打开 `Preferences | Editor | File Types`; 取消 `node_modules` 此项
 
-![](./media/2021/1018/233547.png)
+![](https://file.wulicode.com/note/2021/10-23/11-30-59075.png)
+
 
 因为语法库就是在来自本机和当前项目的 `node_modules`文件夹中。
 
@@ -54,22 +62,28 @@ $ yarn add @types/node -D
 
 然后就慢慢等待加载完毕
 
-![](./media/2021/1018/233557.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-31-14037.png)
+
 
 加载完毕之后，如果当前项目下也有 node_modules，也会自动挂到 JavaScript Library 中
 
 效果
 设置后，不仅没有语法波浪线，在输入的时候已经有代码候选补全，并且按 ctrl 点击还能跳转查看源码
 
-![](./media/2021/1018/233608.png)
+![](https://file.wulicode.com/note/2021/10-23/11-31-24467.png)
+
 
 标签组件名也能补全
 
-![](./media/2021/1018/233616.png)
+![](https://file.wulicode.com/note/2021/10-23/11-31-36678.png)
+
 
 标签也不会出现语法背景黄色，并且还支持自定义属性参数的补全
 
-![](./media/2021/1018/233623.png)
+
+![](https://file.wulicode.com/note/2021/10-23/11-31-49569.png)
+
 
 ## 参考文章
 
