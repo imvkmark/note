@@ -8,11 +8,12 @@
 
 -   [语义化版本 2.0.0](https://semver.org/lang/zh-CN/)
 
-**Git 开发流程**
+**Git 开发**
 
 -   [Git-Flow 工作规范流程](./git/intro-git-flow.md)
 -   [gitignore.io](https://www.toptal.com/developers/gitignore) - 为你的项目创建可用的 gitignore 文件
 -   [Awesome Git](https://github.com/dictcp/awesome-git)
+-   [常用 Git 命令清单](https://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html)
 
 ## 常用工具
 

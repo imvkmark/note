@@ -6,7 +6,7 @@ module.exports = {
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/develop/git/qa-quick.md",
+				"/develop/git/faq.md",
 				"/develop/git/intro-git-flow.md",
 				"/develop/git/success-git-branch-model.md",
 			],
@@ -23,6 +23,7 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/develop/standard/readme.md",
+				"/develop/standard/design.md",
 				"/develop/standard/env.md",
 				"/develop/standard/develop.md",
 				"/develop/standard/client.md",
@@ -35,7 +36,12 @@ module.exports = {
 			text: "IDE",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/develop/ide/webstorm-auto-complete.md"],
+			children: [
+				"/develop/ide/jetbrains-plugins.md",
+				"/develop/ide/vscode-plugins.md",
+				"/develop/ide/phpstorm-tips.md",
+				"/develop/ide/webstorm-auto-complete.md",
+			],
 		},
 	],
 	"/mysql/": [
@@ -148,11 +154,7 @@ module.exports = {
 			text: "Linux",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: [
-                "/os/linux/faq.md", 
-                "/os/linux/ssh-at-linux.md", 
-                "/os/linux/logrotate.md"
-            ],
+			children: ["/os/linux/faq.md", "/os/linux/ssh-at-linux.md", "/os/linux/logrotate.md"],
 		},
 		{
 			text: "Mac",

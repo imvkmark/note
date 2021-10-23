@@ -1,4 +1,4 @@
-# Git 快捷操作
+# Git 常见问题
 
 ## Git 设置代理来访问服务器
 
@@ -92,3 +92,28 @@ $ http://yourname:password@git.oschina.net/name/project.git
 ```
 
 运行相关命令, 输入账号密码, 如果正确则下次不必重新输入, 在 git 目录中存在两个文件 `.gitconfig`, `.git-credentials`, 里边放置的是凭证的信息
+
+## Git 推送 github 代码出现 443: Operation timed out 问题
+
+> 推送到 https://github.com/{username}/{project}.git
+> fatal: 无法访问 'https://github.com/...'：Failed to connect to github.com port 443: Operation timed out
+> Completed with errors, see above
+
+> 如果出现 raw.githubusercontent.com 之类的问题都可以采用此类方法解决
+
+解决: hosts 中加入 ip 映射
+
+查询真实 IP
+
+通过 [IPAddress.com](https://www.ipaddress.com), 输入 github.com 查询到真实 IP 地址, 然后修改 hosts 映射, 这里需要在本地 ping 下指定的查询出来的 ip , 否则也无法访问
+
+## 删除本地所有的 Tag 并获取服务端所有
+
+```
+# 删除本地所有tag 并获取服务端所有
+$ git tag -l | xargs git tag -d && git fetch --tags
+```
+
+## 参考
+
+-   [修改 Hosts 临时解决 GitHub 的 raw.githubusercontent.com 无法链接的问题](https://www.ioiox.com/archives/62.html)
