@@ -202,6 +202,7 @@ module.exports = {
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
+				"/nginx/example/README.md",
 				"/nginx/example/add_header.md",
 				"/nginx/example/autoindex.md",
 				"/nginx/example/cors.md",
@@ -216,7 +217,6 @@ module.exports = {
 				"/nginx/example/location.md",
 				"/nginx/example/nodejs-proxy.md",
 				"/nginx/example/proxy_pass.md",
-				"/nginx/example/README.md",
 				"/nginx/example/split-log.md",
 				"/nginx/example/www-permanent.md",
 			],
