@@ -202,7 +202,7 @@ module.exports = {
 			collapsable: true,
 			sidebarDepth: 2,
 			children: [
-				"/nginx/example/README.md",
+				"/nginx/example/readme.md",
 				"/nginx/example/add_header.md",
 				"/nginx/example/autoindex.md",
 				"/nginx/example/cors.md",
@@ -221,6 +221,7 @@ module.exports = {
 				"/nginx/example/www-permanent.md",
 			],
 		},
+		"/nginx/faq.md",
 	],
 	"/other/": [
 		{
