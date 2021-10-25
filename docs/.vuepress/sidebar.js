@@ -23,8 +23,8 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/develop/standard/readme.md",
+				"/develop/standard/flow.md",
 				"/develop/standard/design.md",
-				"/develop/standard/env.md",
 				"/develop/standard/develop.md",
 				"/develop/standard/client.md",
 				"/develop/standard/app.md",
