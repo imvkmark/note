@@ -310,10 +310,20 @@ $ yum install yum-utils
 $ yum-config-manager --enable remi-php74
 ```
 
-进行 PHP 升级, 本来以为很多,结果啥都不用, 一句话搞定
+进行 PHP 升级
 
 ```
 $ yum upgrade php
+```
+
+升级之后权限会进行重置
+
+_/var/lib/php/_
+
+```
+drwxrwx--- 2 root apache 4096 10月 20 14:03 opcache
+drwxrwx--- 2 root apache 4096 10月 20 14:03 session
+drwxrwx--- 2 root apache 4096 10月 20 14:03 wsdlcache
 ```
 
 更改目录权限
@@ -330,6 +340,10 @@ $ vim /etc/php-fpm.d/www.conf
 ## 补充附录
 
 ### 变更记录
+
+**2021-10-28**
+
+-   增加权限改动示例
 
 **2019-09-20**
 

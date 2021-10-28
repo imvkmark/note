@@ -6,6 +6,7 @@
 就拿阿里云环境来说,有时 npm 一个包也需要耐心等待......等待过去也许是原地踏步,也许就是安装失败.
 幸运的是,国内有几个镜像站点可以供我们使用
 
+-   [https://npmmirror.com](https://npmmirror.com)
 -   [http://www.cnpmjs.org/](http://www.cnpmjs.org/)
 -   [https://npm.taobao.org/](https://npm.taobao.org/)
 
@@ -116,3 +117,7 @@ sudo n stable
 
 -   [快速搭建 Node.js / io.js 开发环境以及加速 npm](http://fengmk2.com/blog/2014/03/node-env-and-faster-npm.html)
 -   [给电脑换源 npm 国内镜像 cnpm](http://yijiebuyi.com/blog/b12eac891cdc5f0dff127ae18dc386d4.html)
+
+## 更新说明
+
+2021 年 10 月 27 日 : 增加 npm 站点 https://npmmirror.com
