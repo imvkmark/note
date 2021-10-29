@@ -2,11 +2,11 @@
 
 服务端如果使用`nodejs`运行服务，由于端口不能同时多个服务占用，而服务器中可能又是多个网站，那么可以使用 Nginx 做反向代理，比如有这些网站域名和端口：
 
-域名 | 端口
---- | ---
-www.xxoo.com | 8001
-www.xo.com | 8002
-www.xo.cn | 8003
+| 域名         | 端口 |
+| ------------ | ---- |
+| www.xxoo.com | 8001 |
+| www.xo.com   | 8002 |
+| www.xo.cn    | 8003 |
 
 当然一个服务器上的网站可能还有更多，可以通过配置 Nginx 转发来代理这些端口分发，如：
 
@@ -50,9 +50,9 @@ server {
 
 配置之后，比如你网站根目录里有 `index.html` 文件，访问 `url` 如：
 
-访问链接 | 解析过程 | 备注
---- | --- | ---
-www.xxoo.com/index.html | Nginx | 由于文件存在，直接使用 Nginx 输出
-www.xxoo.com | Nginx | 由于判断该目录下有 `index.html` 文件，则自动重写到该文件，但 `url` 不变
-www.xxoo.com/xx.html | Nginx -> Node.js:8001 | 由于文件不存在，使用 Nginx 代理到 Node.js 的 8001 端口
-www.xxoo.com/xxoo/ | Nginx -> Node.js:8001 | 首先判断该目录是否存在<br>如果存在再判断是否有 `index.html` 文件<br>一旦不成立，直接代理到 Node.js
+| 访问链接                | 解析过程              | 备注                                                                                               |
+| ----------------------- | --------------------- | -------------------------------------------------------------------------------------------------- |
+| www.xxoo.com/index.html | Nginx                 | 由于文件存在，直接使用 Nginx 输出                                                                  |
+| www.xxoo.com            | Nginx                 | 由于判断该目录下有 `index.html` 文件，则自动重写到该文件，但 `url` 不变                            |
+| www.xxoo.com/xx.html    | Nginx -> Node.js:8001 | 由于文件不存在，使用 Nginx 代理到 Node.js 的 8001 端口                                             |
+| www.xxoo.com/xxoo/      | Nginx -> Node.js:8001 | 首先判断该目录是否存在<br>如果存在再判断是否有 `index.html` 文件<br>一旦不成立，直接代理到 Node.js |

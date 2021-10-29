@@ -228,7 +228,12 @@ module.exports = {
 			text: "其他",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/other/python/mirror.md", "/other/qq-auto-login.md", "/other/mongo-db/install-at-mac.md"],
+			children: [
+				"/other/python/mirror.md",
+				"/other/set-proxy.md",
+				"/other/qq-auto-login.md",
+				"/other/mongo-db/install-at-mac.md",
+			],
 		},
 	],
 };
