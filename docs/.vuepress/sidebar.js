@@ -30,6 +30,8 @@ module.exports = {
 				"/develop/standard/app.md",
 				"/develop/standard/web.md",
 				"/develop/standard/ops.md",
+				"/develop/standard/qa.md",
+				"/develop/standard/testing.md",
 			],
 		},
 		{
