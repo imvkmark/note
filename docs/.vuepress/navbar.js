@@ -20,19 +20,6 @@ module.exports = [
 		link: "/mysql/",
 	},
 	{
-		text: "前端",
-		link: "/web/",
-	},
-	{
-		text: "Php",
-		link: "/php/",
-	},
-	{
-		text: "其他",
-		link: "/other/python/mirror.md",
-	},
-
-	{
 		text: "Wulicode",
 		link: "https://wulicode.com/",
 	},
