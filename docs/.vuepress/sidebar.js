@@ -94,6 +94,12 @@ module.exports = {
 			children: ["/os/linux/faq.md", "/os/linux/ssh-at-linux.md", "/os/linux/logrotate.md"],
 		},
 		{
+			text: "Ubuntu",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/os/ubuntu/lnmp-at-ubuntu.md"],
+		},
+		{
 			text: "Mac",
 			collapsable: true,
 			sidebarDepth: 2,
