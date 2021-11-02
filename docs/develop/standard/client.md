@@ -20,7 +20,15 @@
 
 `x-app`
 
-对于 os, version, id 的 json 字串信息, 以后可能会废弃(原因是 Nginx 无法解析头数据)
+对于 os, version, id 的 json 字串信息, 以后会废弃(原因是 Nginx 无法解析头数据), 对于其他数据使用 x-app-{ph} 来做替代, 我们现在使用的 header 有
+
+这个在项目中约定, 这里仅仅是举例
+
+```
+x-app-sign : 加密验签版本
+x-app-host : 主机头
+....
+```
 
 **系统**
 
@@ -78,15 +86,20 @@ return [
             // sentry
             'sentry-trace',
             // app
-            'x-app', 'x-os', 'x-ver', 'x-id', 
+            'x-app', 'x-app-host', 'x-app-sign'
+            // common software
+            'x-os', 'x-ver', 'x-id',
             // system
-            'x-sys-name', 'x-sys-version', 
+            'x-sys-name', 'x-sys-version',
             'x-sys-network', 'x-sys-device', 'x-sys-cpu',
             // append
-            'x-k1', 'x-k2', 'x-k3', 'x-k4', 'x-k5', 
+            'x-k1', 'x-k2', 'x-k3', 'x-k4', 'x-k5',
             'x-k6', 'x-k7', 'x-k8', 'x-k9', 'x-k10',
         ],
     ]
 ]
 ```
 
+_使用_
+
+在 poppy 项目中可以使用 `x_header('id')` 来获取 'x-id' 参数
