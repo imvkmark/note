@@ -164,6 +164,7 @@ module.exports = {
 				"/nginx/example/split-log.md",
 				"/nginx/example/www-permanent.md",
 				"/nginx/example/static-expired.md",
+				"/nginx/example/413-entity-too-large.md",
 			],
 		},
 		"/nginx/faq.md",
