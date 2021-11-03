@@ -127,6 +127,7 @@ module.exports = {
 				"/nginx/guide/linux-install.md",
 				"/nginx/guide/mac-compile.md",
 				"/nginx/guide/nginx-configure-descriptions.md",
+				"/nginx/guide/openresty.md",
 			],
 		},
 		{
@@ -162,6 +163,7 @@ module.exports = {
 				"/nginx/example/proxy_pass.md",
 				"/nginx/example/split-log.md",
 				"/nginx/example/www-permanent.md",
+				"/nginx/example/static-expired.md",
 			],
 		},
 		"/nginx/faq.md",

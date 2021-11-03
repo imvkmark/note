@@ -42,10 +42,6 @@ x-app-host : 主机头
 
 系统版本号, 系统的数字标识. iOS 的可能值为 14.6, Android 可能值为 7
 
-`x-sys-network`
-
-系统网络类型. 可能值为 WiFi
-
 `x-sys-device`
 
 设备型号. iOS 可能值为 iPhone11,6 / iPad,3, Android 可能值为 HuaWei Mate P40
@@ -90,8 +86,7 @@ return [
             // common software
             'x-os', 'x-ver', 'x-id',
             // system
-            'x-sys-name', 'x-sys-version',
-            'x-sys-network', 'x-sys-device', 'x-sys-cpu',
+            'x-sys-name', 'x-sys-version', 'x-sys-device', 'x-sys-cpu',
             // append
             'x-k1', 'x-k2', 'x-k3', 'x-k4', 'x-k5',
             'x-k6', 'x-k7', 'x-k8', 'x-k9', 'x-k10',
