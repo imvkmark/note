@@ -43,3 +43,7 @@ server {
 ```
 $ sudo chmod -R 775 /var/lib/nginx/
 ```
+
+## 日志切割
+
+关于日志切割参考 [运维中的日志切割(logrotate)](../os/linux/logrotate.md)
