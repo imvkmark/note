@@ -176,11 +176,20 @@ js/css/ico/png/jpeg/gif
 
 资料参考 : [Nginx 的静态页面刷新&缓存的解决方案](../../nginx/example/static-expired.md)
 
+_conf.d/{proj}.conf_
+
 ```
-# 服务器设置/缓存控制
-location ~ .*\.(js|css|png|svg)?$ {
-    # 取消缓存
-    # 告知浏览器处理缓存的方式
+location ~* \.(jpg|gif|png|jpeg|bmp|svg|eot|woff|woff2)$
+{
+    access_log off;
+    expires 30d;
+    add_header Cache-Control "public, max-age=0, must-revalidate";
+}
+
+location ~* \.(js|css)?$
+{
+    access_log off;
+    expires 1d;
     add_header Cache-Control "public, max-age=0, must-revalidate";
 }
 ```

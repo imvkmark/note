@@ -2,6 +2,8 @@
 
 ## Header 约定
 
+### 说明
+
 **软件**
 
 开发软件的相关信息
@@ -73,7 +75,7 @@ x-k3 ... x-k10 : 预留(如果没有值, 则应当为空)
 
 Sentry 允许 H5 进行汇报的标识头, 对接 sentry 之后 web 默认收集信息的头信息, 无需自己设定
 
-**Poppy Framework 快捷设置**
+### Poppy 设置
 
 _config/poppy.php_
 
@@ -100,3 +102,18 @@ return [
 _使用_
 
 在 poppy 项目中可以使用 `x_header('id')` 来获取 'x-id' 参数
+
+### Nginx 配置
+
+_nginx.conf_
+
+```conf
+etag on;
+log_format '$remote_addr - $remote_user [$time_local] "$request" '
+           '$status $body_bytes_sent "$http_referer" '
+           '"$http_user_agent" "$http_x_forwarded_for" '
+           '"$host" $request_time "$upstream_response_time" '
+           '"$http_x_os" "$http_x_ver" "$http_x_id" "$http_x_app" '
+           '"$http_x_sys_name" "$http_x_sys_version" "$http_x_sys_device" "$http_x_sys_cpu" '
+           '"$http_x_k1" "$http_x_k2" "$http_x_k3" "$http_x_k4" "$http_x_k5" "$http_x_k6" "$http_x_k7" "$http_x_k8" "$http_x_k9" "$http_x_k10" ';
+```
