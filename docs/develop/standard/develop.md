@@ -1,4 +1,4 @@
-# 开发流程
+# 开发
 
 ## 版本
 
@@ -158,13 +158,45 @@ DB_PASSWORD=db-password
 
 对于资源文件可以不进行搜集
 
+> tip : 可能需要补充
+
 ```
 js/css/ico/png/jpeg/gif
 ```
 
+搜集 header 头信息参考 [客户端标准化 header 定义](./client.md)
+
 **切割**
 
 日志的切割应当遵循, 不要因为服务器日志的访问的增加, 导致磁盘过满并进行人工干预
+
+**静态资源的缓存访问**
+
+对于静态资源, 本地缓存 + 服务端变动验证
+
+资料参考 : [Nginx 的静态页面刷新&缓存的解决方案](../../nginx/example/static-expired.md)
+
+```
+# 服务器设置/缓存控制
+location ~ .*\.(js|css|png|svg)?$ {
+    # 取消缓存
+    # 告知浏览器处理缓存的方式
+    add_header Cache-Control "public, max-age=0, must-revalidate";
+}
+```
+
+**位置**
+
+日志的位置应当放置在 `/webdata/logs/{project}/` 目录下, 对于不同的应用区别对待
+
+```
+# nginx
+web.access.log
+web.error.log
+# supervisor / queue
+job.web.log
+job.socket.log
+```
 
 ### IP 访问
 

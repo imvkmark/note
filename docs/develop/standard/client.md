@@ -69,6 +69,8 @@ x-k3 ... x-k10 : 预留(如果没有值, 则应当为空)
 
 `sentry-trace`
 
+> 不做日志搜集
+
 Sentry 允许 H5 进行汇报的标识头, 对接 sentry 之后 web 默认收集信息的头信息, 无需自己设定
 
 **Poppy Framework 快捷设置**
