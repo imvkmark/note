@@ -8,6 +8,10 @@ module.exports = [
 		link: "/os/",
 	},
 	{
+		text: "Web开发",
+		link: "/web/",
+	},
+	{
 		text: "开发",
 		link: "/develop/",
 	},
@@ -18,6 +22,10 @@ module.exports = [
 	{
 		text: "Mysql",
 		link: "/mysql/",
+	},
+	{
+		text: "Php",
+		link: "/php/",
 	},
 	{
 		text: "Wulicode",

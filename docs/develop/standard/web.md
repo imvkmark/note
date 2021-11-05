@@ -12,7 +12,7 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 <link rel="icon" type="image/png" href="/assets/icon/favicon.png" />
 ```
 
-对于网页的 Icon 图标 资料参考 : [favicon 简要说明](https://wulicode.com/lang/web/core/favicon.html)
+对于网页的 Icon 图标 资料参考 : [favicon 简要说明](https://wulicode.com/note/web/core/favicon.html)
 
 **placeholder/占位符**
 
@@ -21,6 +21,10 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 -   `a` 链接必须要有 title 属性
 -   `img` 需要存在 alt 属性
 -   `input` 类型的输入相关的需要有占位符(说明性)
+
+**其他规则**
+
+其他优化规则参考 [加快您的网站的最佳实践（Best Practices for Speeding Up Your Web Site）]()
 
 ## Css
 
