@@ -4,6 +4,24 @@
 
 Web 端应遵守客户端的标准约定 [客户端](./client.md)
 
+## Html
+
+**icon 图标**
+
+```html
+<link rel="icon" type="image/png" href="/assets/icon/favicon.png" />
+```
+
+对于网页的 Icon 图标 资料参考 : [favicon 简要说明](https://wulicode.com/lang/web/core/favicon.html)
+
+**placeholder/占位符**
+
+占位符使用的场景理论上需要支持
+
+-   `a` 链接必须要有 title 属性
+-   `img` 需要存在 alt 属性
+-   `input` 类型的输入相关的需要有占位符(说明性)
+
 ## Css
 
 **Css 预处理器的使用**
@@ -11,6 +29,8 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 我一直感觉 less 会笔记 sass/scss 要轻量级, 所以在系统中推荐使用 less 预处理器
 
 **vue 项目中的 css 变量**
+
+> todo 需要完善并和 UI 一同完善此规范
 
 对于 vue3 + vite 项目, 使用 var 变量来替代 less 中的变量(暂定)
 
@@ -32,5 +52,7 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 用户在打开列表之后需要跳转详情, 在详情页返回的时候默认会重新请求接口, 这里我们需要恢复用户之前加载的数据, 避免重复加载
 
 **列表访问过**
+
+> 待讨论
 
 在一次请求周期内, 应当对用户浏览过的数据做记录, 在用户返回列表的时候, 可以清楚的看到哪些数据是自己已经访问过的
