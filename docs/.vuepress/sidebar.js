@@ -161,6 +161,7 @@ module.exports = {
 				"/os/linux/ssh-at-linux.md",
 				"/os/linux/logrotate.md",
 				"/os/linux/expect.md",
+				"/os/linux/autojump.md",
 			],
 		},
 		{

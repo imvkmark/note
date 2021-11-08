@@ -142,9 +142,7 @@ $ cat coding.pub
 
 在 git 管理端部分部署公钥
 
-
 ![](https://file.wulicode.com/note/2021/10-23/11-14-35507.png)
-
 
 ### 2). 测试是否可以链接到 git@e.coding.net 服务器
 
@@ -242,7 +240,6 @@ $ ssh -v user@host
 参考地址 : [ssh connection takes forever to initiate, stuck at “pledge: network”](https://serverfault.com/questions/792486/ssh-connection-takes-forever-to-initiate-stuck-at-pledge-network)
 
 ![](https://file.wulicode.com/note/2021/10-23/11-14-13819.png)
-
 
 我们可以通过如下命令查看恶意 ip 试图登录次数：
 
