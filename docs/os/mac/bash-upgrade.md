@@ -6,9 +6,7 @@
 
 许多 macOS 用户不知道的一件事是，他们正在使用完全过时的 Bash shell 版本。所以，**强烈** 建议在 macOS 上使用较新版本的 Bash，因为它有很多可用的新功能。本文介绍了如何执行此操作。
 
-
 ![](https://file.wulicode.com/note/2021/10-22/09-44-05504.png)
-
 
 ## macOS 上的默认 Bash 版本
 
@@ -191,6 +189,6 @@ $ sudo ln -s /usr/local/bin/bash /bin/bash
 
 解决方法是禁用 SIP，在 `/bin` 中进行更改，然后再次启用 SIP。可以根据[这里](https://developer.apple.com/library/archive/documentation/Security/Conceptual/System_Integrity_Protection_Guide/ConfiguringSystemIntegrityProtection/ConfiguringSystemIntegrityProtection.html)的说明启用和禁用 SIP 。它要求你将计算机引导至**恢复模式**，然后使用 `csrutil disable` 和 `csrutil enable` 命令。无论你想通过这个 **特别复杂的方式** 来完全替换旧的 Bash 版本，或者是接受同时使用两个 Bash 版本，则都取决于你。
 
-## 参考文献
+## 参考
 
 -   [https://apple.stackexchange.com/a/292760](https://apple.stackexchange.com/a/292760)

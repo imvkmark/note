@@ -179,7 +179,7 @@ js/css/ico/png/jpeg/gif
 _conf.d/{proj}.conf_
 
 ```
-location ~* \.(jpg|gif|png|jpeg|bmp|svg|eot|woff|woff2)$
+location ~* \.(jpg|gif|png|jpeg|bmp|svg|eot|woff|woff2|ico)$
 {
     access_log off;
     expires 30d;

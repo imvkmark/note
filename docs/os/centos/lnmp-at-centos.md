@@ -2,9 +2,9 @@
 
 ## 初始化系统
 
-这里设置的用户是 `liexiang`
+这里设置的用户是 `wulicode`
 
-在此之前现需要对 [CentOS 进行服务器完善和升级](https://www.yuque.com/duoli/os/centos-upgrade-and-permission)
+在此之前现需要对 [CentOS 进行服务器完善和升级](./system-install.md)
 
 ### 设置软件源
 
@@ -16,6 +16,14 @@ $ yum install http://dev.mysql.com/get/mysql57-community-release-el7-8.noarch.rp
 ```
 
 -   设置 nginx 源
+
+**方式一:(安装 rpm:推荐)**
+
+```
+$ yum install http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+```
+
+**方式二:(手动创建)**
 
 源地址: [nginx: Linux packages](http://nginx.org/en/linux_packages.html)
 创建 vim `/etc/yum.repos.d/nginx.repo` , 并且填充以下内容来安装 yum repository 库
@@ -172,7 +180,7 @@ $ yum install nginx --enablerepo=nginx
 
 ```nginx
 # /etc/nginx/nginx.conf
-user liexiang;
+user wulicode;
 
 # max upload setting
 http {
@@ -243,8 +251,8 @@ $ yum install --enablerepo=remi-php72 php php-pdo php-fpm php-mbstring php-pecl-
 
 ```
 # /etc/php-fpm.d/www.conf
-user = liexiang
-group = liexiang
+user = wulicode
+group = wulicode
 ```
 
 **配置 php.ini**
@@ -260,7 +268,7 @@ upload_max_filesize = 20M
 **配置 session 是可写状态**
 
 ```sh
-$ chown -R liexiang:liexiang /var/lib/php/
+$ chown -R wulicode:wulicode /var/lib/php/
 ```
 
 ### 配置系统端口允许访问并加入自启动

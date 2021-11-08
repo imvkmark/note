@@ -156,7 +156,12 @@ module.exports = {
 			text: "Linux",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/os/linux/faq.md", "/os/linux/ssh-at-linux.md", "/os/linux/logrotate.md"],
+			children: [
+				"/os/linux/faq.md",
+				"/os/linux/ssh-at-linux.md",
+				"/os/linux/logrotate.md",
+				"/os/linux/expect.md",
+			],
 		},
 		{
 			text: "Ubuntu",
