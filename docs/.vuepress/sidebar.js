@@ -243,16 +243,34 @@ module.exports = {
 	],
 	"/other/": [
 		{
+			text: "Ruby",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/other/ruby/mirror.md"],
+		},
+		{
+			text: "Python",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/other/python/mirror.md"],
+		},
+		{
+			text: "iOS",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/other/ios/universal-links.md"],
+		},
+		{
+			text: "MongoDb",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: ["/other/mongo-db/install-at-mac.md"],
+		},
+		{
 			text: "其他",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: [
-				"/other/python/mirror.md",
-				"/other/ruby/mirror.md",
-				"/other/set-proxy.md",
-				"/other/qq-auto-login.md",
-				"/other/mongo-db/install-at-mac.md",
-			],
+			children: ["/other/set-proxy.md", "/other/qq-auto-login.md"],
 		},
 	],
 };
