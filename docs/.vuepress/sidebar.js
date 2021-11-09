@@ -150,6 +150,7 @@ module.exports = {
 				"/os/centos/upgrade-curl.md",
 				"/os/centos/upgrade-supervisor.md",
 				"/os/centos/aliyun-mount-disk.md",
+				"/os/centos/python-at-centos.md",
 			],
 		},
 		{
@@ -247,6 +248,7 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/other/python/mirror.md",
+				"/other/ruby/mirror.md",
 				"/other/set-proxy.md",
 				"/other/qq-auto-login.md",
 				"/other/mongo-db/install-at-mac.md",

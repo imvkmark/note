@@ -1,4 +1,4 @@
-# 常用操作
+# 常见问题
 
 ## 不记录资源请求
 
@@ -21,7 +21,6 @@ server {
     return 404;
 }
 ```
-
 
 ## nginx 错误 - ERR_CONTENT_LENGTH_MISMATCH
 
@@ -47,3 +46,21 @@ $ sudo chmod -R 775 /var/lib/nginx/
 ## 日志切割
 
 关于日志切割参考 [运维中的日志切割(logrotate)](../os/linux/logrotate.md)
+
+## nginx: [error] invalid PID number "" in "/run/nginx.pid"
+
+先执行
+
+```
+$ nginx -c /etc/nginx/nginx.conf
+```
+
+`nginx.conf` 文件的路径可以从 `nginx -t` 的返回中找到。
+
+```
+$ nginx -s reload
+```
+
+## 参考
+
+-   [invalid PID number "" in "/run/nginx.pid"](https://blog.csdn.net/achang21/article/details/80039561)

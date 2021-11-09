@@ -2,7 +2,7 @@
 
 ## 初始化系统
 
-这里设置的用户是 `wulicode`
+这里设置的用户是 `duoli`
 
 在此之前现需要对 [CentOS 进行服务器完善和升级](./system-install.md)
 
@@ -180,7 +180,7 @@ $ yum install nginx --enablerepo=nginx
 
 ```nginx
 # /etc/nginx/nginx.conf
-user wulicode;
+user duoli;
 
 # max upload setting
 http {
@@ -244,15 +244,15 @@ server{
 ```sh
 # 安装 php 基于 remi , 所以需要安装 remi 源
 # 如果需要安装其他版本, 则需要将 repo=remi-php7x
-$ yum install --enablerepo=remi-php72 php php-pdo php-fpm php-mbstring php-pecl-mcrypt php-gd php-mysqli php-zip php-bcmath php-xml
+$ yum install --enablerepo=remi-php74 php php-pdo php-fpm php-mbstring php-pecl-mcrypt php-gd php-mysqli php-zip php-bcmath php-xml
 ```
 
 **配置 php-fpm 权限**
 
 ```
 # /etc/php-fpm.d/www.conf
-user = wulicode
-group = wulicode
+user = duoli
+group = duoli
 ```
 
 **配置 php.ini**
@@ -268,7 +268,7 @@ upload_max_filesize = 20M
 **配置 session 是可写状态**
 
 ```sh
-$ chown -R wulicode:wulicode /var/lib/php/
+$ chown -R duoli:duoli /var/lib/php/
 ```
 
 ### 配置系统端口允许访问并加入自启动
@@ -343,6 +343,27 @@ $ chown -R userxxx.userxxx /var/lib/php/
 $ vim /etc/php-fpm.d/www.conf
 # user=...
 # group=xxx
+```
+
+## FAQ
+
+### File not found
+
+`nginx/apache` 网页文件的 selinux 上下文需要配置, 如果未配置则日志中返回的错误是 ` FastCGI sent in stderr: "Primary script unknown" while reading response header from upstream`, 暴力解决方法: 关闭
+
+```sh
+$ vim /etc/sysconfig/selinux
+```
+
+设置为禁用
+
+```
+# This file controls the state of SELinux on the system.
+# SELINUX= can take one of these three values:
+#     enforcing - SELinux security policy is enforced.
+#     permissive - SELinux prints warnings instead of enforcing.
+#     disabled - No SELinux policy is loaded.
+SELINUX=disabled
 ```
 
 ## 补充附录
