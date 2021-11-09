@@ -86,6 +86,7 @@ module.exports = {
 				"/develop/ide/jetbrains-plugins.md",
 				"/develop/ide/vscode-plugins.md",
 				"/develop/ide/phpstorm-tips.md",
+				"/develop/ide/phpstorm-deploy.md",
 				"/develop/ide/webstorm-auto-complete.md",
 			],
 		},
