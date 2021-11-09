@@ -61,6 +61,19 @@ $ nginx -c /etc/nginx/nginx.conf
 $ nginx -s reload
 ```
 
+## 不记录 404 日志
+
+nginx 有个选项 `log_not_found` 用来开启和禁用未发现的文件日志, 可用区块是 `http`, `server`, `location`
+
+```conf
+server {
+    location =  /favicon.ico {
+        log_not_found off;
+        access_log off;
+    }
+}
+```
+
 ## 参考
 
 -   [invalid PID number "" in "/run/nginx.pid"](https://blog.csdn.net/achang21/article/details/80039561)

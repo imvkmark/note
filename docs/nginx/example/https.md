@@ -9,7 +9,7 @@
 
 # 配置个http的站点，用来做重定向，当然如果你不需要把 HTTP->HTTPS 可以把这个配置删了
 server {
-    listen       80;
+    listen 80;
 
     # 配置域名
     server_name domain.com www.domain.com;
