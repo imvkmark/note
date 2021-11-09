@@ -8,7 +8,7 @@ module.exports = [
 		link: "/os/",
 	},
 	{
-		text: "Web开发",
+		text: "Web",
 		link: "/web/",
 	},
 	{
@@ -26,6 +26,10 @@ module.exports = [
 	{
 		text: "Php",
 		link: "/php/",
+	},
+	{
+		text: "Other",
+		link: "/other/set-proxy.html",
 	},
 	{
 		text: "Wulicode",
