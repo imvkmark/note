@@ -22,7 +22,7 @@ module.exports = {
 			text: "Vue 3 + Vite",
 			collapsable: true,
 			sidebarDepth: 2,
-			children: ["/web/vue/readme.md", "/web/vue/faq.md"],
+			children: ["/web/vue/readme.md", "/web/vue/faq.md", "/web/vue/best-practice.md"],
 		},
 		{
 			text: "React",
