@@ -79,6 +79,22 @@ module.exports = {
 			],
 		},
 		{
+			text: "命名规范",
+			collapsable: true,
+			sidebarDepth: 2,
+			children: [
+				"/develop/specs/default.md",
+				"/develop/specs/html.md",
+				"/develop/specs/css.md",
+				"/develop/specs/javascript.md",
+				"/develop/specs/react.md",
+				"/develop/specs/php.md",
+				"/develop/specs/php-laravel.md",
+				"/develop/specs/android.md",
+				"/develop/specs/ios-oc.md",
+			],
+		},
+		{
 			text: "IDE",
 			collapsable: true,
 			sidebarDepth: 2,

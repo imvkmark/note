@@ -51,3 +51,7 @@ export default defineConfig(({ mode }) => {
 	};
 });
 ```
+
+## 参考
+
+-   [尤大推荐的神器 unplugin...](https://juejin.cn/post/7012446423367024676)
