@@ -10,11 +10,12 @@ server {
 }
 ```
 
-输出Response Headers:
+输出 Response Headers:
 
 ```
 Cache-Control:no-cache
 ```
+
 当文件没有变更时会返回 304 ，有变更时会是 200 ，如果强制命中 200 可以再添加: `if_modified_since off;` 忽略 Request Headers 里的 `If-Modified-Since` 字段。
 
 ## 缓存
@@ -25,7 +26,7 @@ server {
 }
 ```
 
-1d为1天，单位如下:
+1d 为 1 天，单位如下:
 
 ```
 ms  milliseconds
@@ -46,14 +47,13 @@ server {
 }
 ```
 
-输出Response Headers:
+输出 Response Headers:
 
 ```
 Cache-Control:max-age=315360000
 ```
 
 ## 根据链接设置缓存时间
-
 
 ```nginx
 server {

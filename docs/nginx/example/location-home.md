@@ -16,4 +16,4 @@ PC 站 : 后端代码
 ## 参考
 
 -   参考[如何布局您的 PC 站和移动站，并表达两者之间内容的对应关系](https://ziyuan.baidu.com/college/courseinfo?id=156)
-- [Detect Mobile Browsers](http://detectmobilebrowsers.com/mobile)
+-   [Detect Mobile Browsers](http://detectmobilebrowsers.com/mobile)

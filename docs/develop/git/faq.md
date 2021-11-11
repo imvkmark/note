@@ -114,6 +114,20 @@ $ http://yourname:password@git.oschina.net/name/project.git
 $ git tag -l | xargs git tag -d && git fetch --tags
 ```
 
+## git pull 冲突终极解决方案
+
+服务端 git pull 或 git checkout 报以下错误
+
+> Your local changes to the following files would be overwritten by merge
+> error: Your local changes to the following files would be overwritten by merge:
+
+解决方案：
+
+```sh
+$ git reset --hard HEAD
+$ git clean -f -d
+```
+
 ## 参考
 
 -   [修改 Hosts 临时解决 GitHub 的 raw.githubusercontent.com 无法链接的问题](https://www.ioiox.com/archives/62.html)

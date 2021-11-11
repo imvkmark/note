@@ -12,7 +12,7 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 <link rel="icon" type="image/png" href="/assets/icon/favicon.png" />
 ```
 
-对于网页的 Icon 图标 资料参考 : [favicon 简要说明](https://wulicode.com/note/web/core/favicon.html)
+对于网页的 Icon 图标 资料参考 : [favicon 简要说明](../../web/core/favicon.md)
 
 **placeholder/占位符**
 
@@ -24,7 +24,15 @@ Web 端应遵守客户端的标准约定 [客户端](./client.md)
 
 **其他规则**
 
-其他优化规则参考 [加快您的网站的最佳实践（Best Practices for Speeding Up Your Web Site）]()
+其他优化规则参考 [加快您的网站的最佳实践（Best Practices for Speeding Up Your Web Site）](../../web/core/performance-rules.md)
+
+**页面中使用的图标**
+
+对于单色的图标首选字体图标 (iconfont) , 对于多色的图标首选 svg, 矢量图在不同的分辨率下显示的结果都是最优的, 不失真.
+
+**图片的加载**
+
+对于使用图片在 oss 中进行存储的, 根据不同的展示位置采用不同的图片加载大小 [Aliyun OSS 图片缩放](https://help.aliyun.com/document_detail/44688.html)
 
 ## Css
 

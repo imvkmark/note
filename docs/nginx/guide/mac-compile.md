@@ -1,26 +1,26 @@
 # Mac 编译 Nginx 并增加 echo 模块
 
-## 方法1 : 使用 openrestry
+## 方法 1 : 使用 openrestry
 
 安装地址 : http://openresty.org/en/installation.html
 
 ```
 $ brew install openresty/brew/openresty
 ```
+
 如果是 nginx 也安装了, 可以停掉 nginx , 将配置文件复制到 openresty 文件夹 `/usr/local/etc/openresty` , 启动 openresty 即可运行
 
 ```
-$ brew services stop nginx 
+$ brew services stop nginx
 $ brew services start openresty/brew/openresty
 ```
-
 
 ## 编译 echo module 并加载(失败)
 
 > !!! 此方法不能使用, 仅仅作为记录
 
 **解压源文件**
-Nginx 目录 : `/usr/local/share/nginx/src` 
+Nginx 目录 : `/usr/local/share/nginx/src`
 
 包含的文件列表
 
@@ -45,11 +45,10 @@ $ cat configure_args.txt
 ...
 ```
 
-
-
 **下载 echo module**
 
 当前目录: `/usr/local/share/nginx/src/`
+
 ```
 $ mkdir modules
 $ cd modules
@@ -60,10 +59,9 @@ $ git clone https://github.com/openresty/echo-nginx-module
 
 这里增加编译参数 `--with-echo-module=/usr/local/share/nginx/src/modules/echo-nginx-module`
 
-
-
-这里使用 echo 官方使用动态模块加入: 
+这里使用 echo 官方使用动态模块加入:
 https://github.com/openresty/echo-nginx-module#installation
+
 ```
 $ ./configure --prefix=/usr/local/Cellar/nginx/1.19.2 \
 --add-dynamic-module=/usr/local/share/nginx/src/modules/echo-nginx-module \
@@ -93,6 +91,7 @@ $ make install
 ```
 
 这样存在动态模块 `/usr/local/Cellar/nginx/1.19.2/modules`
+
 ```
 $ ll
 -rwxr-xr-x  1 duoli  staff    49K  8 25 17:08 ngx_http_echo_module.so
@@ -107,4 +106,3 @@ nginx: [emerg] module "/usr/local/Cellar/nginx/1.19.2/modules/ngx_http_echo_modu
 ```
 
 原因可能是版本不兼容: https://github.com/openresty/echo-nginx-module#compatibility
-

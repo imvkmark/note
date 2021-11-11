@@ -1,7 +1,7 @@
 # [转]加快您的网站的最佳实践（Best Practices for Speeding Up Your Web Site）
 
 又名 : 雅虎网站优化 30 条军规
-原文地址 : [Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html)
+原文地址 : ~~[Best Practices for Speeding Up Your Web Site](https://developer.yahoo.com/performance/rules.html)~~
 
 Yahoo!的 Exceptional Performance 团队为改善 Web 性能带来最佳实践。他们为此进行了 一系列的实验、开发了各种工具、写了大量的文章和博客并在各种会议上参与探讨。最佳实践的核心就是旨在提高网站性能。
 
