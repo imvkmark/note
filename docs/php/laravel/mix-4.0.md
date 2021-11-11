@@ -1580,7 +1580,7 @@ mix.options({
 
 如果需要的话可以使用一些混合选项和覆盖选项。请注意上面的选项，以及它们的默认值。这里有一个快速概述:
 
-- **extractVueStyles:**提取 `.vue` 组件样式(CSS在<style>标签内)到一个专用文件，而不是将其嵌入到HTML中。
+- **extractVueStyles:**提取 `.vue` 组件样式(CSS在 `<style>` 标签内)到一个专用文件，而不是将其嵌入到HTML中。
 - **globalVueStyles:**表示一个文件包含在每个组件样式中。这个文件应该只包含变量、函数或mixin，以便在最终的编译文件中防止重复的css。这个选项只有在启用了提取工具时才有效。
 - **processCssUrls:**进程/优化相对样式表`url()`。默认情况下，Webpack会自动更新这些url。但是，如果您的文件夹结构已经按照您想要的方式进行组织，那么将此选项设置为false以禁用处理。
 - **terser：** 使用此选项合并项目所需的任何[自定义Terser选项](https://github.com/webpack-contrib/terser-webpack-plugin#options)。
