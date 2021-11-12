@@ -84,8 +84,7 @@ module.exports = {
 			sidebarDepth: 2,
 			children: [
 				"/develop/specs/default.md",
-				"/develop/specs/html.md",
-				"/develop/specs/css.md",
+				"/develop/specs/web.md",
 				"/develop/specs/javascript.md",
 				"/develop/specs/react.md",
 				"/develop/specs/php.md",

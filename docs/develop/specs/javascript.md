@@ -545,7 +545,7 @@ if (xmlhttp.status == 200) {
 参数化类型, 即指定了该类型中包含的一系列"类型参数". 类似于 Java 中的泛型.
 
 > -   字符串数组`{Array.<string>}`
-> -   键为字符串, 值为整数的对象类型 {Object.<string, number>}
+> -   键为字符串, 值为整数的对象类型 `{Object.<string, number>}`
 
 -   联合类型 `{(number|boolean)}`
 
