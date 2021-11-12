@@ -6,3 +6,8 @@
 
 
 ![](https://file.wulicode.com/note/2021/10-23/11-24-47607.png)
+
+
+# 2. Malformed UTF-8 characters, possibly incorrectly encoded
+
+一般都是截取 utf-8 数据的时候出现的错误, 把中文截取为无法识别的内容
