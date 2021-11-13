@@ -554,7 +554,7 @@ if (xmlhttp.status == 200) {
 -   记录类型 `{{myNum: number, myObject}}`
 
 由现有类型组成的类型. 表示包含指定成员及类型的值. 这个例子中, myNum 为 number 类型, myObject 为任意类型.
-注意大括号为类型语法的一部分. 比如, Array.<{length}>, 表示一具有 length 属性的 Array 对象.
+注意大括号为类型语法的一部分. 比如, `Array.<{length}>`, 表示一具有 length 属性的 Array 对象.
 
 -   可为空类型 `{?number}`
 
@@ -579,13 +579,13 @@ if (xmlhttp.status == 200) {
 -   可变参数 `{function(string, ...[number]): number}`
 
 带一个参数 (字符类型) 的函数类型, 并且函数的参数个数可变, 但参数类型必须为 number. 说明函数的可变长参数.
-可变长的参数 (使用 [@param ](/param) 标记) [@param ](/param) {...number} var_args
+可变长的参数 (使用 [@param ] 标记) [@param ] {...number} var_args
 函数参数个数可变. 使用标记, 说明函数具有不定长参数.
 
 -   函数的 缺省参数 `{function(?string=, number=)}`
 
 函数带一个可空且可选的字符串型参数, 一个可选整型参数. = 语法只针对 function 类型有效. 说明函数的可选参数.
-函数 可选参数(使用 [@param ](/param) 标记) [@param ](/param) {number=} opt_argument
+函数 可选参数(使用 [@param ] 标记) [@param ] {number=} opt_argument
 number 类型的可选参数. 使用标记, 说明函数具有可选参数.
 
 -   所有类型 `{*}`
