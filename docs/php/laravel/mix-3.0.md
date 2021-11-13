@@ -582,7 +582,7 @@ Laravel 和 Laravel 一起工作, 来抽象出热加载的复杂性.
 
 但是，在开发部署环境下手动更新 url 会是一个负担，所以，laravel 提供了一个 mix()方法，他会动态的构建 js 或者样式表的引用，然后输出。上面的代码因此可以修改成：
 
-```
+```html
 <body>
     <div id="app"></div>
 
@@ -646,7 +646,7 @@ mix.js('src', 'output')
 
 对于 Laravel 项目，一个解决方案是开箱即用的。只需调用全局 `mix()` 函数，就完成了!我们将计算出导入的适当文件名。这里有一个例子:
 
-```
+```html
 <!DOCTYPE html>
 <html lang="en">
     <head>

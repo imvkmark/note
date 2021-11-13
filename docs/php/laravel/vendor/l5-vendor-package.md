@@ -471,7 +471,7 @@ composer require aaa/bbb (aaa/bbb是你composer.json中的name值)
 
 #### 15)Demo视图
 
-```
+```html
     <!DOCTYPE html>
     <html>
         <head>
