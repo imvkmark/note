@@ -417,7 +417,7 @@ this 的语义很特别. 有时它引用一个全局对象(大多数情况下), 
 
 可选参数以 opt\_ 开头.
 函数的参数个数不固定时, 应该添加最后一个参数 var_args 为参数的个数. 你也可以不设置 var_args 而取代使用 arguments.
-可选和可变参数应该在 [@param ](/param) 标记中说明清楚. 虽然这两个规定对编译器没有任何影响, 但还是请尽量遵守
+可选和可变参数应该在 `[@param ]` 标记中说明清楚. 虽然这两个规定对编译器没有任何影响, 但还是请尽量遵守
 
 ### Getters 和 Setters
 
@@ -551,7 +551,7 @@ if (xmlhttp.status == 200) {
 
 一个整数或者布尔值. 表示其值可能是 A 类型, 也可能是 B 类型
 
--   记录类型 `{{myNum: number, myObject}}`
+-   记录类型 `{myNum: number, myObject}`
 
 由现有类型组成的类型. 表示包含指定成员及类型的值. 这个例子中, myNum 为 number 类型, myObject 为任意类型.
 注意大括号为类型语法的一部分. 比如, `Array.<{length}>`, 表示一具有 length 属性的 Array 对象.
