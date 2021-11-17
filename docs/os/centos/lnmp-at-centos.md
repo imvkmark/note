@@ -155,7 +155,7 @@ FLUSH PRIVILEGES
 ```
 
 **让用户可以远程访问**
-在 my.conf 中 [mysqld] 部分增加以下行并重启 mysqld
+在 my.conf 中 `[mysqld]` 部分增加以下行并重启 mysqld
 
 ```
 bind-address=0.0.0.0
@@ -304,6 +304,49 @@ $ wget http://dev.mysql.com/get/Downloads/MySQL-5.7/mysql-community-server-5.7.*
 # 安装
 yum localinstall mysql-community-client**.rpm
 yum localinstall mysql-community-server**.rpm
+```
+
+### mysql 更换安装目录
+
+默认位置在:
+
+```
+/var/lib/mysql
+```
+
+新建目标位置并移动数据
+
+```
+# new dir
+$ mkdir /webdata/db/
+# move data
+$ mv -R /var/lib/mysql /webdata/db
+# permission
+$ chown -R mysql.mysql /webdata/db
+```
+
+编辑配置文件
+
+```
+# vi config
+$ vi /etc/my.cnf
+datadir=/webdata/db/mysql
+socket=/webdata/db/mysql/mysql.sock
+```
+
+更改 mysql 链接 socket, 否则 mysql 客户端无法使用默认配置连接
+
+```conf
+[client]
+port=3306
+socket=/webdata/db/mysql/mysql.sock
+```
+
+重启服务
+
+```
+# restart mysql
+$ systemctl restart mysqld
 ```
 
 ### Centos 进行 Php 升级(使用 remi-php 源)

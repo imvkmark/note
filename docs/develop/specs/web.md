@@ -454,13 +454,19 @@ html 代码
     ┕ header.png
 ```
 
-**less 中的变量、函数、混合等采用驼峰式命名**
+**less 中的变量、函数、mixin 等采用驼峰式命名**
+
+对于变量的命名采用(定义/模块) 来进行命名, 使用中尽量不要直接调用颜色, 而是调用模块的定义
 
 ```less
 @mainFontColor: #444;
 
-.company-name {
-	color: @mainFontColor;
+:root {
+	--mod-border-color: @mainFontColor;
+}
+
+.mod {
+	color: var(--mode-border-color);
 }
 ```
 
@@ -850,7 +856,6 @@ transition: transform 2s linear, opacity 2s linear;
     	opacity: 1;
     }
     ```
-
 
 ## 附录
 

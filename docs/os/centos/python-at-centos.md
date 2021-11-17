@@ -58,7 +58,7 @@ $ sudo make install
 用于编译的时候对这些功能进行支持
 
 ```
-$ yum install readline-devel zlib-devel gzip2-devel sqlite-devel libffi-devel
+$ yum install readline-devel zlib-devel sqlite-devel libffi-devel
 ```
 
 ## 使用 pyenv 安装 最新版
