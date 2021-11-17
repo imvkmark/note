@@ -87,6 +87,7 @@ module.exports = {
 				"/develop/specs/web.md",
 				"/develop/specs/javascript.md",
 				"/develop/specs/react.md",
+				"/develop/specs/vue.md",
 				"/develop/specs/php.md",
 				"/develop/specs/php-laravel.md",
 				"/develop/specs/android.md",

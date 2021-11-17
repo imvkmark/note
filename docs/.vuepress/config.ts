@@ -23,19 +23,6 @@ module.exports = {
 		},
 	},
 	plugins: [
-		[
-			"@vuepress/docsearch",
-			{
-				apiKey: "9eca016e40335ee789f9a73253c13be1",
-				indexName: "note",
-				appId: "LD89A1JN8Y",
-				locales: {
-					"/": {
-						placeholder: "Search",
-					},
-				},
-			},
-		],
 		["@vuepress/toc"],
 	],
 };
