@@ -5,10 +5,10 @@
 pipy 国内镜像目前有：
 
 ```
-http://pypi.doubanio.com/simple            豆瓣
-http://pypi.mirrors.ustc.edu.cn/simple     中国科学技术大学
-http://pypi.tuna.tsinghua.edu.cn/simple    教育网
-http://mirrors.aliyun.com/pypi/simple/     阿里云
+https://pypi.doubanio.com/simple               豆瓣
+https://mirrors.bfsu.edu.cn/pypi/web/simple    中国科学技术大学
+https://pypi.tuna.tsinghua.edu.cn/simple       教育网
+https://mirrors.aliyun.com/pypi/simple         阿里云
 ```
 
 对于 pip 这种在线安装的方式来说，很方便，但网络不稳定的话很要命。使用国内镜像相对好一些，使用 `easy_install` 和 `pip` 会让 Pyhthon 的模块安装和管理变得非常简单，但是，如果你身在国内的话，从官方的镜像下载的速度是很令人抓狂的事情，如同修改 `apt-get` 或 `yum` 的镜像地址一样，`easy_install` 和 `pip` 也需要修改镜像地址。修改`easy_install` 和 `pip` 的镜像地址通常可以有以下两种方法，可以分别使用命令和配置方式实现。

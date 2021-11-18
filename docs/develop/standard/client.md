@@ -65,7 +65,16 @@ x-k3 ... x-k10 : 预留(如果没有值, 则应当为空)
 
 `User-Agent`
 
-用户标识头, 如果是 h5, 则取标准的 agent 浏览器/Webview 信息, 如果是 iOS/Android, 必要的数据值可能为 SmobaHelper/5.71.101 (iPhone; iOS 14.6; Scale/3.00)
+用户标识头, 如果是 h5, 则取标准的 agent 浏览器/Webview 信息, 如果是 iOS/Android, 必要的数据组成为
+
+```
+SmobaHelper/5.71.101 (iPhone; iOS 14.6; Scale/3.00), H5 检查是否在 App 内部可以使用 Project 来进行检测
+{Project} : 项目名称例如 Huowan/Mixin/Kejinshou
+{Version} : 软件的版本号
+{Brand}   : 设备品牌
+{Type}    : 设备类型(例如: Mate 20)
+{Dp}      : 分辨率缩放值
+```
 
 **异常**
 
