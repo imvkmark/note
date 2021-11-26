@@ -2,6 +2,19 @@
 
 本项目是基于 [Web 开发最佳实践](../core/best-practice.md) 的扩展
 
+## 解决 globalThis 的问题
+
+参考 : [解决浏览器端 globalThis is not defined 报错](https://juejin.cn/post/7022929947933179917)
+
+**解决方案**
+在 `<head>` 中加入
+
+```html
+<script>
+	this.globalThis || (this.globalThis = this);
+</script>
+```
+
 ## 组件的自动加载
 
 > 自动加载的弱项
