@@ -1,10 +1,6 @@
 # 笔记
 
-> This Project has been closed, files move to http://wulicode.com
-
-## 文档地址
-
-https://wulicode.com/note
+> This Project has been closed, files move to static blog https://wulicode.com
 
 ## 模块
 
